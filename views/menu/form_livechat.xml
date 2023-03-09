@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <!-- tree view livechat -->
+        <record id="view_form_livechat_tree" model="ir.ui.view">
+            <field name="name">form.livechat.tree</field>
+            <field name="model">form.livechat</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Livechat">
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="kota"/>
+                    <field name="kecamatan"/>
+                    <field name="keterangan"/>
+                    <field name="time_stamp"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

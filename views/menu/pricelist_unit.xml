@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- tree view unit -->
+        <record id="view_pricelist_unit_tree" model="ir.ui.view">
+            <field name="name">pricelist.unit.tree</field>
+            <field name="model">pricelist.unit</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Pricelist">
+                    <!-- <field name="id_wilayah"/> -->
+                    <field name="unit_tipe"/>
+                    <field name="product"/>
+                    <field name="nama_tipe"/>
+                    <field name="unit_price"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

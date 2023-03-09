@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="blog_home" name="Home Blog">
+        <t t-call="website_blog.index">
+            <t t-set="head">
+                <link t-if="blog" t-att-href="'/blog/%s/feed' % (blog.id)" type="application/atom+xml" rel="alternate" title="Atom Feed"/>
+                <meta t-if="active_tag_ids" name="robots" t-attf-content="none"/>
+            </t>
+            <!-- Check for active options: the stored value may be used in sub-templates too  -->
+            <t t-set="opt_blog_cards_design" t-value="request.website.viewref('website_blog.opt_blog_cards_design').active"/>
+            <t t-set="opt_blog_list_view" t-value="request.website.viewref('website_blog.opt_blog_list_view').active"/>
+            <t t-set="opt_blog_readable" t-value="request.website.viewref('website_blog.opt_blog_readable').active"/>
+            <t t-set="opt_blog_sidebar_show" t-value="request.website.viewref('website_blog.opt_blog_sidebar_show').active"/>
+            <div id="o_wblog_blog_top">
+                <!-- Selectively display droppable-areas for 'all blogs' or single-blog pages -->
+                <t t-if="not tag and not date_begin">
+                    <div id="o_wblog_blog_top_droppable">
+                        <t t-if="blog">
+                            <t t-set="oe_structure_blog_single_header_description">Edit the '
+                                <t t-esc="blog.name"/>
+' page header.</t>
+                            <div t-field="blog.content" class="oe_structure" t-attf-id="oe_structure_blog_single_header_#{blog.id}" t-att-data-editor-sub-message="oe_structure_blog_single_header_description"/>
+                        </t>
+                        <t t-elif="blogs">
+                            <t t-set="oe_structure_blog_all_header_description">Edit the 'All Blogs' page header.</t>
+                            <div class="oe_structure" id="oe_structure_blog_all_header" t-att-data-editor-sub-message="oe_structure_blog_all_header_description"/>
+                        </t>
+                    </div>
+                </t>
+                <t t-else="">
+                    <!-- Droppable-area for filtered results (tags or date) -->
+                    <t t-set="oe_structure_blog_filtered_header_description">Edit the 'Filter Results' page header.</t>
+                    <div class="oe_structure" id="oe_structure_blog_filtered_header" t-att-data-editor-sub-message="oe_structure_blog_filtered_header_description"/>
+                </t>
+            </div>
+            <!-- <t t-call="dym_website.blog_bar_template"/> -->
+            <section id="o_wblog_index_content" t-att-class="opt_blog_cards_design and 'o_wblog_page_cards_bg'">
+                <div class="container py-4">
+                    <div t-attf-class="row #{opt_blog_sidebar_show and 'justify-content-between' or 'justify-content-center'}">
+                        <div id="o_wblog_posts_loop_container" t-attf-class="col #{'o_wblog_read' if opt_blog_list_view else ''}">
+                            <t t-call="website_blog.posts_loop">
+                                <t t-if="not blog" t-set="posts_list_show_parent_blog" t-value="True"/>
+                            </t>
+                            <!-- <t t-call="website.pager">
+                                        <t t-set="classname">justify-content-center</t>
+                                    </t> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+</odoo>

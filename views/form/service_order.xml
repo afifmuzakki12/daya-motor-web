@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="form_service_order" name="Service Form">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <script src="/dym_website/static/src/js/popup.js"></script>
+        <t t-if="submitted">
+        </t>
+        <t t-else="">
+          <section class="oe_img_bg" data-name="Image - Text">
+            <div class="container">
+              <div class="row align-items-center pt24 pb24">
+                <div class="col-lg-7 p-auto pt24 pb24">
+                  <img src="/dym_website/static/src/img/chat-service.png" class="img img-fluid br10" />
+                </div>
+                <div class="col-lg-5">
+                  <div class="card bg-color-secondary border-0 br20">
+                    <div class="mt-4">
+                      <h2 class="text-center font-weight-bold text-color-primary">
+                      Booking Service
+                      </h2>
+                    </div>
+                    <div class="m-auto">
+                      <p class="text-center text-color-primary">
+                      Halo BroSis, isi form berikut untuk melakukan booking service ya!
+                      </p>
+                    </div>
+                    <div class="m-3">
+                      <form class="form" id="form_submit_form" action="/service-order" onsubmit="return false, popupFunction()">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="s_website_form_rows row s_col_no_bgcolor">
+                          <div class="form-group col-12">
+                            <input type="text" class="form-control" name="name" placeholder="Nama" required="required"/>
+                          </div>
+                          <div class="form-group col-12">
+                            <input type="number" class="form-control" name="phone" placeholder="Nomor Telepon" required="required"/>
+                          </div>
+                          <div class="form-group col-12">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required="required"/>
+                          </div>
+                          <div class="form-group col-12">
+                            <select class="form-control" id="exampleFormControlSelect1" name="unit_tipe" required="required">
+                              <option value="">Jenis Motor...</option>
+                              <option>Matic</option>
+                              <option>Sport</option>
+                              <option>Cub</option>
+                              <option>Big Bike</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-12">
+                            <input type="text" class="form-control" name="plat_no" placeholder="Plat Nomor" required="required"/>
+                          </div>
+                          <div class="form-group col-12">
+                            <input type="text" class="form-control" name="no_mesin" placeholder="Nomor Mesin" required="required"/>
+                          </div>
+                          <div class="form-group col-12">
+                            <input type="submit" class="btn btn-primary font-weight-bold w-100" value="Kirim"/>
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal-popup">
+                              <span class="close-popup">&#215;</span>
+                              <img class="modal-content-popup" src="/dym_website/static/src/img/riri_thanks-service.png" />
+                            </div>
+                            <script src="/dym_website/static/src/js/popup.js"></script>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </t>
+      </div>
+    </t>
+  </template>
+</odoo>

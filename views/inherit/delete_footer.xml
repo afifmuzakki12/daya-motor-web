@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- <template id="delete_footer" inherit_id="web.frontend_layout" name="Delete Footer">
+        <xpath expr="//div[@class='o_footer_copyright']" position="replace">
+        </xpath>
+    </template> -->
+</odoo>

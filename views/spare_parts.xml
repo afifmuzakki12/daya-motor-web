@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="spare_parts" name="Suku Cadang">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <div class="live-chat-riri">
+          <a href="/live-chat/">
+            <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+          </a>
+        </div>
+        <section class="s_text_image pt0 pb0 bg-100" data-name="Image - Text">
+          <div>
+            <t t-foreach="sparepart_page_rec" t-as="image">
+              <img t-att-src="'data:image/png;base64,%s' % to_text(image.banner_sparepart)" class="container-max-width" alt="Image Banner Service"/>
+            </t>
+          </div>
+        </section>
+        <section class="pb0 pt0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb16 text-center">
+                <t t-foreach="sparepart_page_rec" t-as="header">
+                  <h2 class="s_title_default color-black font-weight-bold">
+                  <span t-field="header.header_sparepart"/>
+                  </h2>
+                </t>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pt0 pb0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt0 pb0 text-center">
+                <t t-foreach="sparepart_page_rec" t-as="header">
+                  <p class="s_title_default color-black">
+                    <span t-field="header.text_sparepart"/>
+                  </p>
+                </t>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="s_three_columns pb32 bg-100 pt0" data-name="Columns">
+          <div class="container">
+            <div class="row d-flex align-items-stretch">
+              <t t-foreach="sparepart_card_rec" t-as="card">
+                <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                  <div class="card bg-white">
+                    <div class="card-body">
+                      <h3 class="card-title font-weight-bold">
+                        <font style="color: rgb(231, 99, 99); font-size: 18px"><span t-field="card.card_title"/></font>
+                      </h3>
+                      <p class="card-text color-black">
+                        <span t-field="card.card_text"/>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </t>
+            </div>
+          </div>
+        </section>
+        <section class="bg-100 pb0 pt0" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb16 text-center">
+                <h2 class="s_title_default text-color-primary font-weight-bold">
+                  Suku Cadang
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="s_three_columns pb0 bg-100" data-name="Columns">
+          <div class="container">
+            <div class="row d-flex align-items-stretch">
+              <div class="s_col_no_bgcolor pt16 pb16 col-lg-4">
+                <div class="card bg-white">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/sparepart-fungsi-cairan-pendingin-coolant.png" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold">
+                    <div class="text-dark">
+                      <p>Cairan Pendingin (Coolant)</p>
+                    </div>
+                    <!-- <div class="text-muted">
+                      <p class="mb0">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 23.997.000,-</p>
+                    </div> -->
+                    <div class="pb16 pt16 s_btn text-center" data-name="Button">
+                      <a href="#" class="btn btn-secondary stretched-link">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="s_col_no_bgcolor pt16 pb16 col-lg-4">
+                <div class="card bg-white">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/sparepart-element-cleaner.png" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold">
+                    <div class="text-dark">
+                      <p>Element Cleaner / Saringan Udara</p>
+                    </div>
+                    <!-- <div class="text-muted">
+                      <p class="mb0">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 19.669.000,-</p>
+                    </div> -->
+                    <div class="pb16 pt16 s_btn text-center" data-name="Button">
+                      <a href="#" class="btn btn-secondary stretched-link">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="s_col_no_bgcolor pt16 pb16 col-lg-4">
+                <div class="card bg-white">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/sparepart-shockbecker.png" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold">
+                    <div class="text-dark">
+                      <p>Shockbreaker</p>
+                    </div>
+                    <!-- <div class="text-muted">
+                      <p class="mb0">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 22.994.000,-</p>
+                    </div> -->
+                    <div class="pb16 pt16 s_btn text-center" data-name="Button">
+                      <a href="#" class="btn btn-secondary stretched-link">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+</odoo>

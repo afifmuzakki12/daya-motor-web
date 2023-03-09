@@ -1,0 +1,137 @@
+<odoo>
+    <template id="product_item_custom" inherit_id="website_sale.products_item" customize_show="True" name="Product Item Custom" priority="20">
+        <xpath expr="//form" position="replace">
+            <!-- <form action="/shop/cart/update" method="post" class="card oe_product_cart br10" t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope" itemtype="http://schema.org/Product">
+                <div class="card-body p-1 oe_product_image br10">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="ribbon-wrapper">
+                        <a href="#" role="button" class="ribbon btn btn-danger">Sale</a>
+                    </div>
+                    <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                        <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                        <span t-field="image_holder.image_1920" t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}" class="d-flex h-100 justify-content-center align-items-center"/>
+                    </a>
+                </div>
+                <div class="card-body p-0 pl-2 o_wsale_product_information">
+                    <div class="p-2 o_wsale_product_information_text">
+                        <h6 class="o_wsale_products_item_title">
+                            <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name"/>
+                            <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                        </h6>
+                        <div class="text-muted">
+                            <p class="mb0">Harga Mulai</p>
+                        </div>
+                        <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                            <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                        </div>
+                    </div>
+                    <div class="o_wsale_product_btn"/>
+                </div>
+                <a t-att-href="product_href" class="btn btn-secondary stretched-link mx-auto mb-2">Selengkapnya &amp;gt;</a>
+            </form> -->
+            <!-- <form action="/shop/cart/update" method="post" class="card oe_product_cart" t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope" itemtype="http://schema.org/Product">
+                <div class="card-body p-1 oe_product_image">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="ribbon-wrapper">
+                        <a href="#" role="button" class="ribbon btn btn-danger">Sale</a>
+                    </div>
+                    <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                        <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                        <span t-field="image_holder.image_1920" t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}" class="d-flex h-100 justify-content-center align-items-center"/>
+                    </a>
+                </div>
+                <div class="card-body p-0 text-center o_wsale_product_information">
+                    <div class="p-2 o_wsale_product_information_text">
+                        <h6 class="o_wsale_products_item_title">
+                            <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name"/>
+                            <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                        </h6>
+                        <p class="text-muted mb0">Harga Mulai</p>
+                        <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                            <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                        </div>
+                        <a t-att-href="product_href" class="btn btn-secondary">Selengkapnya&amp;gt;</a>
+                    </div>
+                    <div class="o_wsale_product_btn"/>
+                </div>
+            </form> -->
+            <form action="/shop/cart/update" method="post" class="card oe_product_cart br10" t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope" itemtype="http://schema.org/Product">
+                <div class="card-body p-1 oe_product_image br10">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="ribbon-wrapper">
+                        <a href="#" role="button" class="ribbon btn btn-danger">Sale</a>
+                    </div>
+                    <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                        <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                        <span t-field="image_holder.image_1920" t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}" class="d-flex h-100 justify-content-center align-items-center"/>
+                    </a>
+                </div>
+                <div class="card-body px-4 p-0 o_wsale_product_information br10">
+                    <div class="p-2 o_wsale_product_information_text">
+                        <h6 class="text-color-primary font-weight-bold o_wsale_products_item_title">
+                            <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" class="text-decoration-none"/>
+                            <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                        </h6>
+                        <p class="text-muted small font-weight-bold mb-0">Harga Mulai</p>
+                        <h5 class="product_price font-weight-bold text-color-primary" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                            <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                        </h5>
+                        <div class="text-center">
+                            <a class="btn btn-secondary btn-sm mx-auto mb-2" t-att-href="product_href">Selengkapnya &amp;gt;</a>
+                        </div>
+                    </div>
+                    <div class="o_wsale_product_btn text-center"/>
+                </div>
+            </form>
+            <!-- <div class="card br10 my-2" style="height: max-content;" action="/shop/cart/update" method="post" t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope" itemtype="http://schema.org/Product">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="px-5">
+                    <a t-att-href="product_href" itemprop="url">
+                        <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                        <span t-field="image_holder.image_1920" t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}"/>
+                    </a>
+                </div>
+                <div class="card-body px-4 py-0 br10">
+                    <h6 class="card-title text-color-primary font-weight-bold mb-1">
+                        <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name"/>
+                    </h6>
+                    <p class="text-muted small font-weight-bold mb-0">Harga Mulai</p>
+                    <h5 class="mb-1 font-weight-bold text-color-primary" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                        <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                        <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                    </h5>
+                    <div class="text-center">
+                        <a class="btn btn-secondary mx-auto mb-2" t-att-href="product_href">Selengkapnya &amp;gt;</a>
+                    </div>
+                </div>
+            </div> -->
+        </xpath>
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
+            <t t-set="in_wish" t-value="product._is_in_wishlist()"/>
+            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+            <button t-if="product_variant_id" type="button" role="button" class="btn btn-secondary o_add_wishlist" t-att-disabled="in_wish or None" title="Add to Wishlist" t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant_id" data-action="o_wishlist">
+                <span class="fa fa-heart" role="img" aria-label="Add to wishlist"/>
+            </button>
+        </xpath>
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
+            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+            <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+            <t t-if="product_variant_id">
+                <a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+</odoo>

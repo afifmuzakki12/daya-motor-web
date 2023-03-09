@@ -1,0 +1,10 @@
+<odoo>
+    <template id="add_to_wishlist_custom" name="Custom Add To Wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist">
+        <xpath expr="//button" position="replace">
+            <button t-if="product_variant" type="button" role="button" class="btn btn-tertiary btn-lg mt16 o_add_wishlist_dyn float-right" t-att-disabled="in_wish or None" t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist">
+                <span class="fa fa-heart" role="img" aria-label="Add to wishlist"/>
+ FAVORIT
+            </button>
+        </xpath>
+    </template>
+</odoo>

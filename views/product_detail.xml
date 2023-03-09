@@ -1,0 +1,680 @@
+<odoo>
+    <template id="produk_unit_detail" inherit_id="website_sale.product" customize_show="True" name="Unit Detail" priority="20">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
+                <section t-attf-class="oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}" id="product_detail" t-att-data-view-track="view_track and '1' or '0'">
+                    <!-- <div class="row">
+                    <div class="col-md-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a t-att-href="keep(category=0)">Products</a>
+                            </li>
+                            <li t-if="category" class="breadcrumb-item">
+                                <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)" t-field="category.name"/>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <span t-field="product.name"/>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-inline justify-content-end">
+                            <t t-call="website_sale.search">
+                                <t t-set="search" t-value="False"/>
+                            </t>
+                            <t t-call="website_sale.pricelist_list">
+                                <t t-set="_classes">ml-2</t>
+                            </t>
+                        </div>
+                    </div>
+                </div> -->
+                    <div class="live-chat-riri">
+                        <a href="/live-chat/">
+                            <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                        </a>
+                    </div>
+                    <section class="s_text_image pt0 pb0 bg-100" data-name="Image - Text">
+                        <span t-if="product.banner_image == false">
+                            <div style="display: none;"></div>
+                        </span>
+                        <span t-else="" class="text-danger">
+                            <img t-attf-src="data:image/jpg;base64,{{ product.banner_image }}" class="container-max-width"/>
+                        </span>
+                        <!-- <img src="/dym_website/static/src/img/banner-vario.png" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="" aria-describedby="tooltip730266" /> -->
+                    </section>
+                    <section class="s_text_block bg-color-primary pb8 pt16" data-name="Text block">
+                        <div class="container">
+                            <div class="row">
+                                <div id="connect" class="col-lg-6">
+                                    <a t-attf-href="/web/static/lib/pdfjs/web/viewer.html?file=%2Fweb%2Fcontent%3Fmodel%3Dproduct.template%26field%3Dbrochure_file%26id%3D{{product.id}}#page=1" target="_blank" class="text-decoration-none text-center text-white">
+                                        <p>DOWNLOAD BROCHURE</p>
+                                    </a>
+                                </div>
+                                <div id="connect" class="col-lg-6">
+                                    <a href="#unit_order" class="text-decoration-none text-center text-white">
+                                        <p>LAKUKAN PEMESANAN</p>
+                                    </a>
+                                </div>
+                                <!-- <div class="col-lg-3" id="connect">
+                                    <a href="/test-ride/" class="text-decoration-none text-center text-white">
+                                        <p>TEST RIDE</p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3" id="connect">
+                                    <a href="#" class="text-decoration-none text-center text-white">
+                                        <p>CALCULATOR CICILAN</p>
+                                    </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pb0 pt0" data-name="Title">
+                        <span t-if="product.varian_1 == false">
+                            <div style="display: none;"></div>
+                        </span>
+                        <span t-else="">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-12 s_title pt16 pb0 text-center">
+                                        <h1 class="s_title_default">
+                                            <span class="text-color-primary font-weight-bold">Varian Warna
+                                            </span>
+                                        </h1>
+                                        <div class="s_hr text-left pb4 pt4" data-name="Separator">
+                                            <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </section>
+                    <section>
+                        <div class="container">
+                            <t t-foreach="varian_color_image" t-as="variants">
+                                <div>
+                                    <t t-esc="variants"/>
+                                </div>
+                            </t>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="container pb24">
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_1 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_1 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_2 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_2 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_3 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_3 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_4 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_4 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_5 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_5 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_6 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_6 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_7 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_7 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_8 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_8 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_9 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_9 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_10 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_10 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_11 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_11 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <span t-if="product.varian_12 == false">
+                                        <div style="display: none;"></div>
+                                    </span>
+                                    <span t-else="" class="text-danger">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.varian_12 }}" class="w-100 h-auto"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="myCarousel1665046911785" class="carousel slide min-height-unset container pb24" data-interval="5000" data-name="Carousel">
+                        <span t-if="not product.banner_slider_first">
+                            <div style="display: none;"></div>
+                        </span>
+                        <span t-else="">
+                            <div class="carousel-inner min-height-unset">
+                                <t t-if="product.banner_slider_first and not product.banner_slider_second">
+                                    <div class="carousel-item active min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_first }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                </t>
+                                <t t-if="product.banner_slider_first and product.banner_slider_second and not product.banner_slider_third">
+                                    <div class="carousel-item active min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_first }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_second }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                </t>
+                                <t t-if="product.banner_slider_first and product.banner_slider_second and product.banner_slider_third and not product.banner_slider_fourth">
+                                    <div class="carousel-item active min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_first }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_second }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_third }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                </t>
+                                <t t-if="product.banner_slider_first and product.banner_slider_second and product.banner_slider_third and product.banner_slider_fourth">
+                                    <div class="carousel-item active min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_first }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_second }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_third }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                    <div class="carousel-item min-height-unset">
+                                        <img t-attf-src="data:image/jpg;base64,{{ product.banner_slider_fourth }}" class="img-fluid w-100 br10"/>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="bottom-right pb24">
+                                <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                    <span class="sr-only o_default_snippet_text">Previous</span>
+                                </div>
+                                <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+                                    <span class="sr-only">Next</span>
+                                </div>
+                            </div>
+                        </span>
+                    </section>
+                    <section id="spin360" class="pt24">
+                        <span t-if="product.spin_360 == false">
+                            <div style="display: none;"></div>
+                        </span>
+                        <span t-else="">
+                            <div class="container">
+                                <div class="wrap-360">
+                                    <img src="/dym_website/static/src/img/spin-360.png" class="icon-360"/>
+                                    <img t-attf-src="data:image/jpg;base64,{{ product.spin_360 }}" class="img-fluid mx-auto d-block"/>
+                                </div>
+                            </div>
+                        </span>
+                    </section>
+                    <section class="pb0 pt0 bg-color-primary" data-name="Title">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16 bg-color-primary text-center">
+                                    <h1 class="s_title_default text-white">
+                                    Status Unit: 
+                                        <span t-if="product.is_ready == true" class="font-weight-bold">
+                                        Ready
+                                        </span>
+                                        <span t-else="" class="text-danger font-weight-bold">
+                                        Not Ready
+                                        </span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="unit_order" class="s_three_columns pb32 pt32" data-name="Columns">
+                        <div class="container">
+                            <div id="product_details">
+                                <!-- <h1 itemprop="name" t-field="product.name">Product Name</h1> -->
+                                <span itemprop="url" style="display:none;" t-esc="product.website_url"/>
+                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="js_product js_main_product">
+                                        <div class="row" style="height: fit-content;">
+                                            <div class="col-12 col-md-3 align-self-center">
+                                                <div>
+                                                    <!-- <p t-field="product.description_sale" class="text-muted mt-3" placeholder="A short description that will also appear on documents."/> -->
+                                                    <div id="product_attributes_simple" class="text-center">
+                                                        <!-- <hr t-if="sum([(1 if len(l.value_ids)==1 else 0) for l in product.attribute_line_ids])"/> -->
+                                                        <p class="text-muted">
+                                                            <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                                                            <t t-foreach="single_value_attributes" t-as="attribute">
+                                                                <h3><span t-field="attribute.name" class="text-color-primary font-weight-bold"/></h3>
+                                                                <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                                                                    <span t-field="ptal.product_template_value_ids._only_active().name" class="btn btn-primary"/>
+                                                                    <t t-if="not ptal_last">, </t>
+                                                                </t>
+                                                                <br/>
+                                                            </t>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <t t-placeholder="select">
+                                                    <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id"/>
+                                                    <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id"/>
+                                                    <t t-if="combination" t-call="sale.variants">
+                                                        <t t-set="ul_class" t-value="'flex-column'"/>
+                                                        <t t-set="parent_combination" t-value="None"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                                    </t>
+                                                </t>
+                                                <!-- <t t-call="website_sale.product_price"/> -->
+                                                <p t-if="True" class="css_not_available_msg alert alert-warning">Varian warna pada tipe ini tidak tersedia.</p>
+                                            </div>
+                                            <div class="mx-auto col-12 col-md-7">
+                                                <t t-call="website_sale.shop_product_carousel"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div id="product_option_block"/>
+                                            </div>
+                                            <div class="col-6">
+                                                <a role="button" id="add_to_cart" class="btn btn-primary mt16 js_check_product a-submit d-sm-inline-block" href="#">
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-3">
+                                                            <i class="fa fa-shopping-bag"/>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <p class="m-0">PESAN</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                                <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                                <!-- <hr t-if="product.description_sale"/> -->
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pb0 pt0" data-name="Title">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt0 pb24 text-center">
+                                    <h1 class="s_title_default">
+                                        <span class="text-color-primary font-weight-bold">
+                    SPESIFIKASI MOTOR
+                                        </span>
+                                    </h1>
+                                    <div class="s_hr text-left pt0 pb0" data-name="Separator">
+                                        <hr class="border-color-primary s_hr_4px s_hr_solid w-25 mx-auto" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="s_tabs o_colored_level pb0 pt0" data-vcss="001" data-snippet="s_tabs" data-name="Tabs">
+                        <div class="container">
+                            <div class="s_tabs_main">
+                                <div class="s_tabs_nav mb-3">
+                                    <ul class="nav nav-pills justify-content-center nav-fill" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link font-weight-bold active" id="nav_tabs_link_1666167394767_165" data-toggle="tab" href="#nav_tabs_content_1666167394767_165" role="tab" aria-controls="nav_tabs_content_1666167394767_165" aria-selected="false">MESIN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_166" data-toggle="tab" href="#nav_tabs_content_1666167394767_166" role="tab" aria-controls="nav_tabs_content_1666167394767_166" aria-selected="false">KELISTRIKAN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_167" data-toggle="tab" href="#nav_tabs_content_1666167394767_167" role="tab" aria-controls="nav_tabs_content_1666167394767_167" aria-selected="true">DIMENSI DAN BERAT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_168" data-toggle="tab" href="#nav_tabs_content_1666167394767_168" role="tab" aria-controls="nav_tabs_content_1666167394767_168" aria-selected="false">RANGKA DAN KAKI</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_169" data-toggle="tab" href="#nav_tabs_content_1666167394767_169" role="tab" aria-controls="nav_tabs_content_1666167394767_169" aria-selected="false">HARGA OTR</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="s_tabs_content tab-content">
+                                    <div class="tab-pane fade active show" id="nav_tabs_content_1666167394767_165" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_165">
+                                        <section class="pt0 pb0">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="w-25">Tipe Mesin</td>
+                                                        <td class="w-0">:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_mesin"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Transmisi</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_transmisi"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Kopling</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_kopling"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Starter</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_starter"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Diameter x Langkah</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.diameter_langkah"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Volume Langkah</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.volume_langkah"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sistem Pendingin Mesin</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.pendingin_mesin"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sistem Suplai Bahan Bakar</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.suplai_bahan_bakar"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Perbandingan Kompresi</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.perbandingan_kompresi"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Daya Maksimum</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.daya_maksimum"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Torsi Maksimum</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.torsi_maksimum"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sistem Pengereman</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.sistem_pengereman"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kapasitas Tangki Bahan Bakar</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.kapasitas_tangki"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kapasitas Minyak Pelumas</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.kapasitas_pelumas"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pola Perpindahan Gigi</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.pola_perpindahan_gigi"></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav_tabs_content_1666167394767_166" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_166">
+                                        <section class="pt0 pb0">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="w-25">Sistem Pengapian</td>
+                                                        <td class="w-0">:</td>
+                                                        <td>
+                                                            <p t-field="product.sistem_pengapian"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Baterai/Aki</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_aki"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Busi</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.tipe_busi"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Power Charger</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <p t-field="product.power_charger"></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav_tabs_content_1666167394767_167" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_167">
+                                        <div class="oe_structure oe_empty">
+                                            <section class="pt0 pb0">
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="w-25">Panjang x Lebar x Tinggi</td>
+                                                            <td class="w-0">:</td>
+                                                            <td>
+                                                                <p t-field="product.dimensi_plt"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jarak Sumbu Roda</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.sumbu_roda"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jarak Terendah Ke Tanah</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.jarak_ke_tanah"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tinggi Tempat Duduk</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.tinggi_tempat_duduk"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Berat Kosong (Curb Weight)</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.berat_kosong"></p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav_tabs_content_1666167394767_168" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_168">
+                                        <div class="oe_structure oe_empty">
+                                            <section class="pt0 pb0">
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="w-25">Tipe Rangka</td>
+                                                            <td class="w-0">:</td>
+                                                            <td>
+                                                                <p t-field="product.tipe_rangka"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ukuran Ban Depan</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.ban_depan"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ukuran Ban Belakang</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.ban_belakang"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tipe Rem Depan</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.rem_depan"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tipe Rem Belakang</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.rem_belakang"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tipe Suspensi Depan</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.suspensi_depan"></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tipe Suspensi Belakang</td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <p t-field="product.suspensi_belakang"></p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav_tabs_content_1666167394767_169" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_169">
+                                        <div class="oe_structure oe_empty text-center">
+                                            <h3 class="font-weight-bold text-color-primary">Harga OTR: Rp <span t-field="product.list_price"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <div itemprop="description" t-field="product.website_description" class="oe_structure mt16" id="product_full_description"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='product_option_block']" position="inside">
+            <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active">
+                <t t-set="product_variant" t-value="product_variant or product._create_first_product_variant()"/>
+                <t t-set="in_wish" t-value="product_variant and product_variant._is_in_wishlist()"/>
+                <button t-if="product_variant" type="button" role="button" class="btn btn-tertiary mt16 o_add_wishlist_dyn float-right" t-att-disabled="in_wish or None" t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist">
+                    <div class="row">
+                        <div class="col-12 col-md-3">
+                            <span class="fa fa-heart" role="img" aria-label="Add to wishlist"/>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <p class="m-0">FAVORIT</p>
+                        </div>
+                    </div>
+                </button>
+            </t>
+        </xpath>
+    </template>
+</odoo>

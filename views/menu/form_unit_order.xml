@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!-- tree view unit order -->
+        <record id="view_form_unit_order_tree" model="ir.ui.view">
+            <field name="name">form.unit.order.tree</field>
+            <field name="model">form.unit.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Unit Order">
+                    <field name="time_stamp"/>
+                    <field name="product_category"/>
+                    <field name="product_name"/>
+                    <field name="product_varian"/>
+                    <field name="otr_price"/>
+                    <field name="down_payment"/>
+                    <field name="tenor"/>
+                    <field name="angsuran_per_bulan"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="telphone"/>
+                    <field name="gender"/>
+                    <field name="kota"/>
+                    <field name="kecamatan"/>
+                    <field name="kelurahan"/>
+                    <!-- <field name="tulis_pesan"/> -->
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

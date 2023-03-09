@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- form view sparepart card -->
+        <record id="view_sparepart_card_tree" model="ir.ui.view">
+            <field name="name">sparepart.card.tree</field>
+            <field name="model">sparepart.card</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Sparepart Card">
+                    <field name="card_title"></field>
+                    <field name="card_text"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

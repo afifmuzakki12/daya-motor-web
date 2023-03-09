@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="safety_riding" name="Safety Riding">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="live-chat-riri">
+                    <a href="/live-chat/">
+                      <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                    </a>
+                  </div>
+                <section class="s_text_image pt0 pb0 bg-100" data-name="Image - Text">
+                    <div>
+                        <img src="/dym_website/static/src/img/safety-riding-park.png" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="banner-spareparts" aria-describedby="tooltip730266" />
+                    </div>
+                </section>
+                <section class="pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Safety Riding Center
+                                </h1>
+                                <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                    <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container pb24">
+                    <div class="card br10 p-4">
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <image class="w-100 br10" src="/dym_website/static/src/img/daya-safety-riding.png" />
+                                </div>
+                                <div class="col-lg-8">
+                                    <h2 class="text-color-primary">
+                                        PT DAYA ADICIPTA MOTORA
+                                    </h2>
+                                    <p class="text-muted">Jl. Raya Cibeureum No.26, Campaka, Kec. Andir, Kota Bandung, Jawa Barat 40184</p>
+                                    <p>
+                                        <span class="fa fa-phone pr-2"></span>(022) 605 1033
+                                    </p>
+                                    <div class="text-right">
+                                        <a href="https://goo.gl/maps/pDVHxMaBpvkQDa7E6" target="_blank">
+                                            <i class="fa fa-2x fa-paper-plane text-color-primary" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

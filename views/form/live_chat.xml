@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="livechat_form_template" name="Livechat Form">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <t t-if="submitted">
+          <h3 class="alert alert-success mt16 mb16">
+            <i class="fa fa-thumbs-up"/>
+                    Survey submitted successfully
+          </h3>
+          <a href="/live-chat">Submit another survey</a>
+        </t>
+        <t t-else="">
+          <section class="oe_img_bg" data-name="Image - Text" style="background-image: url('/dym_website/static/src/img/banner-vario.png');">
+            <div class="container">
+              <div class="row align-items-center pt24 pb24">
+                <div class="col-lg-7 p-auto pt24 pb24">
+                  <img src="/dym_website/static/src/img/banner-riri.png" class="img img-fluid br10" />
+                </div>
+                <div class="col-lg-5">
+                  <div class="card" style="border-radius: 30px ">
+                    <div class="mt-4">
+                      <h2 class="text-center font-weight-bold text-color-primary">
+                      Chat Riri
+                      </h2>
+                    </div>
+                    <div class="m-auto">
+                      <p class="text-center text-color-primary">
+                      Halo BroSis, Miss Riri siap membantu kamu!
+                      </p>
+                    </div>
+                    <div class="m-3">
+                      <form class="form" id="form_livechat_form" action="/live-chat" method="POST" onsubmit="return submitUserForm();">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama" required="true" name="name" />
+                        </div>
+                        <div class="form-group">
+                          <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="No. Telepon" required="true" name="phone" minlength="8" maxlength="10"/>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Kota / Kabupaten" required="true" name="kota" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Kecamatan" required="true" name="kecamatan" />
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control link-style" name="keterangan" required="true">
+                            <option value="">--- Pilih Topik Pertanyaan ---</option>
+                            <option value="Pertanyaan Seputar Unit Motor">Pertanyaan Seputar Unit Motor</option>
+                            <option value="Pertanyaan Seputar BPKB/ STNK">Pertanyaan Seputar BPKB/STNK</option>
+                            <option value="Pertanyaan Seputar Part dan Accessories">Pertanyaan Seputar Part dan Accessories</option>
+                            <option value="Komplain">Komplain</option>
+                            <option value="Lainnya">Lainnya</option>
+                          </select>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LcLrzsjAAAAAO4-6C3fYmCFrBTnb0VdLVv4qtLP" data-callback="verifyCaptcha"></div>
+                        <div id="g-recaptcha-error"></div>
+                        <input type="submit" name="submit" value="Mulai Chat" class="btn btn-primary font-weight-bold w-100"/>
+                      </form>
+                      <script src='https://www.google.com/recaptcha/api.js'></script>
+                      <script src='/dym_website/static/src/js/recaptcha.js'></script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </t>
+      </div>
+    </t>
+  </template>
+</odoo>

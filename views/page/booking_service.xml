@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="booking_service" name="Booking Service">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <!-- <body onload="findMyState()"> -->
+          <div class="live-chat-riri">
+            <a href="/live-chat/">
+              <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+            </a>
+          </div>
+          <section class="s_text_image pt0 pb0 bg-100" data-name="Image - Text">
+            <div>
+              <t t-foreach="booking_service_rec" t-as="image">
+                <img t-att-src="'data:image/png;base64,%s' % to_text(image.banner_service)" class="container-max-width" alt="Image Banner Service"/>
+              </t>
+              <!-- <img src="/dym_website/static/src/img/banner-service.png" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="" aria-describedby="tooltip730266" /> -->
+            </div>
+          </section>
+          <section class="pb0 pt0 bg-100" data-name="Title">
+            <div class="container">
+              <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                  <t t-foreach="booking_service_rec" t-as="header">
+                    <h2 class="s_title_default color-black font-weight-bold">
+                    <span t-field="header.header_service"/>
+                    </h2>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pt0 pb0 bg-100" data-name="Title">
+            <div class="container">
+              <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 s_title pt0 pb0 text-center">
+                  <t t-foreach="booking_service_rec" t-as="text">
+                    <p class="s_title_default color-black"><span t-field="text.text_service"></span></p>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pt32 bg-100 pb0" data-name="Title">
+            <div class="container">
+              <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                  <h3 class="s_title_default text-black">
+                    <t t-foreach="booking_service_rec" t-as="header">
+                      <span t-field="header.header_card"></span>
+                    </t>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="s_three_columns pb32 bg-100 pt0" data-name="Columns">
+            <div class="container">
+              <div class="row d-flex align-items-stretch">
+                <t t-foreach="booking_service_card_rec" t-as="card">
+                  <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                    <div class="card bg-white">
+                      <div class="card-body">
+                        <h3 class="card-title font-weight-bold">
+                          <font style="color: rgb(231, 99, 99); font-size: 18px"><span t-field="card.card_title"/></font>
+                        </h3>
+                        <p class="card-text color-black">
+                          <span t-field="card.card_text"/>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </t>
+              </div>
+            </div>
+          </section>
+          <section class="bg-100 pb24">
+            <div class="container">
+              <div class="text-center">
+                <a href="https://b2b.daya-motor.com/booking/new" class="btn btn-primary btn-lg m-auto" target="_blank">
+                  Booking Service
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- <section class="bg-100 pb0 pt0" data-name="Title">
+            <div class="container">
+              <div class="row s_nb_column_fixed">
+                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                  <h2 class="s_title_default text-color-primary font-weight-bold">
+                  Book Service
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pt32 pb32 bg-color-secondary" data-name="Title">
+            <div class="container">
+              <div class="text-center">
+                <img class="img-fluid o_we_custom_image padding-small" src="/dym_website/static/src/img/dealer-terdekat.svg"/>
+                <h3 class="text-color-primary font-weight-bold pt-2">
+                  AHASS Terdekat
+                </h3>
+              </div>
+            </div>
+          </section>
+          <section class="container pt24 pb24">
+            <button class="btn btn-primary m-auto">
+              <span id="status" class="pr-4"></span>
+              <i class="fa fa-paper-plane" />
+            </button>
+            <div class="d-none">
+            Latitude:
+              <span id="user-lat"></span>
+            </div>
+            <div class="d-none">
+            Longitude:
+              <span id="user-long"></span>
+            </div>
+            <div class="row pt24 m-auto">
+              <div class="col-lg-3 card bg-color-secondary br10">
+                <div class="card-body bg-color-secondary">
+                  <div class="text-right">
+                    <a href="/dealer-terdekat/maps/">
+                      <i class="fa fa-lg fa-paper-plane text-color-primary" />
+                    </a>
+                  </div>
+                  <h6 class="card-title text-muted font-weight-bold">
+                  Daya Motor Soekarno Hatta
+                  </h6>
+                  <h6 class="card-subtitle text-muted pb4">
+                  Jl. Soekarno Hatta 518 Batununggal, Kota Bandung, Jawa Barat
+                  </h6>
+                  <i class="fa fa-lg fa-phone-square text-color-primary pr-2" />
+                  <small>
+                    <span class="font-weight-bold text-muted">085974596264</span>
+                  </small>
+                  <div class="text-right">
+                    <a href="#">
+                      <i class="fa fa-lg fa-calendar text-color-primary" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+          <!-- <script src="/dym_website/static/src/js/geolocation.js"></script> -->
+        <!-- </body> -->
+      </div>
+    </t>
+  </template>
+</odoo>

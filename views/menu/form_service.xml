@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!-- tree view service -->
+        <record id="view_form_service_tree" model="ir.ui.view">
+            <field name="name">form.service.tree</field>
+            <field name="model">form.service</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Livechat">
+                    <field name="time_stamp"/>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="unit_tipe"/>
+                    <field name="plat_no"/>
+                    <field name="no_mesin"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

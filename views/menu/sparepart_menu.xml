@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- form view sparepart -->
+        <record id="view_form_sparepart_tree" model="ir.ui.view">
+            <field name="name">form.sparepart.tree</field>
+            <field name="model">sparepart.page</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Sparepart">
+                    <field name="banner_sparepart" widget="binary"></field>
+                    <field name="header_sparepart"></field>
+                    <field name="text_sparepart"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

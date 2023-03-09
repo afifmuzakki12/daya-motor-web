@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="blog_top_banner" name="Top banner - Name / Latest Post" inherit_id="dym_website.blog_home" active="True" customize_show="True">
+        <xpath expr="//div[@id='o_wblog_blog_top_droppable']" position="replace">
+            <div t-if="first_post or blog" class="container">
+                <div class="row py-4">
+                    <div t-attf-class="mb-3 mb-md-0 #{'col-md-5' if (not opt_blog_list_view and not opt_blog_sidebar_show) else 'col-md-6'}">
+                        <t t-call="website.record_cover">
+                            <t t-set="_record" t-value="blog or first_post"/>
+                            <t t-set="additionnal_classes" t-value="'h-100 py-5 py-md-0 overflow-hidden rounded shadow'"/>
+                        </t>
+                    </div>
+                    <div t-att-class="'col-md-7' if (not opt_blog_list_view and not opt_blog_sidebar_show) else 'col-md-6'">
+                        <div class="container position-relative h-100 d-flex flex-column justify-content-around pt-1 pb-2">
+                            <div t-attf-class="o_wblog_post_title #{'js_tweet' if opt_blog_post_select_to_tweet else ''} #{'js_comment' if opt_blog_post_select_to_comment else ''}">
+                                <t t-if="blog">
+                                    <span t-field="blog.name" class="h1 d-block" placeholder="Blog's Title"/>
+                                    <div t-field="blog.subtitle" class="h4" placeholder="Subtitle"/>
+                                </t>
+                                <t t-else="first_post">
+                                    <div t-if="not date and not tag" class="h4 mb-3 bg-gamma px-2 rounded-sm d-inline-block mr-auto">Latest</div>
+                                    <a t-attf-href="/blog/#{slug(first_post.blog_id)}/post/#{slug(first_post)}" t-field="first_post.name" class="h1 d-block" t-att-data-blog-id="first_post.id" placeholder="Blog Post Title"/>
+                                    <div t-field="first_post.subtitle" class="h4" placeholder="Subtitle"/>
+                                    <div t-if="not blog" class="d-flex">
+                                        <div class="small mt-2 mb-3 mr-1">
+                                        in 
+                                            <i class="fa fa-folder-open text-muted"/>
+                                            <a t-attf-href="#{blog_url(blog=first_post.blog_id)}" t-field="first_post.blog_id"/>
+                                        </div>
+                                    </div>
+                                    <div t-field="first_post.teaser" class="mb-4 lead" placeholder=""/>
+                                    <div>
+                                        <a t-attf-href="/blog/#{slug(first_post.blog_id)}/post/#{slug(first_post)}" class="btn btn-primary">Read more</a>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="sale_total" inherit_id="website_sale.total" customize_show="True" name="Sale Total Custom">
+        <xpath expr="//table[@class='table']" position="after">
+            <p class="font-weight-bold text-muted text-justify small mx-2"><span class="text-color-primary">*</span> Harga diatas merupakan harga OTR Jakarta. Setiap daerah dapat berbeda harga. Untuk info selengkapnya bisa ditanyakan melalui fitur <a href="/live-chat"><span class="text-color-primary">Live Chat</span></a> atau mengunjungi <a href="/dealer-terdekat"><span class="text-color-primary">Dealer Daya Motor</span></a> terdekat.</p>
+        </xpath>
+    </template>
+</odoo>

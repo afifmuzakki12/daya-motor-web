@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="stnk_view" inherit_id="sale.sale_order_portal_template" customize_show="True" name="Stnk Custom">
+        <xpath expr="//div[@id='sale_order_communication']" position="before">
+            <div class="card pb-5">
+                <div class="pb-2 pt-3 card-header bg-white">
+                    <h2>Status STNK dan BPKB</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="text-color-primary font-weight-bold">STNK:</h4>
+                    <div class="row">
+                    <div class="col-xl">
+                        <div class="wizard">
+                        <div class="progress-wizard">
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step active">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">STNK Sedang Diproses</div>
+                            </div>
+                            </a>
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">Silahkan Ambil STNK Anda</div>
+                            </div>
+                            </a>
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">STNK Sudah Diterima</div>
+                            </div>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <h4 class="text-color-primary font-weight-bold">BPKB:</h4>
+                    <div class="row">
+                    <div class="col-xl">
+                        <div class="wizard">
+                        <div class="progress-wizard">
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step active">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">BPKB Sedang Diproses</div>
+                            </div>
+                            </a>
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">Silahkan Ambil BPKB Anda</div>
+                            </div>
+                            </a>
+                            <a class="no-decoration">
+                            <div class="progress-wizard-step">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"/>
+                                <div class="text-center progress-wizard-steplabel">BPKB Sudah Diterima</div>
+                            </div>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

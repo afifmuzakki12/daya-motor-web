@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="replace_footer" inherit_id="website.footer_custom" name="Custom Footer">
+    <xpath expr="//div[@id='footer']" position="replace">
+      <div id="footer" class="oe_structure oe_structure_solo" data-oe-id="1872" data-oe-xpath="/data/xpath/div" data-oe-model="ir.ui.view" data-oe-field="arch">
+        <section class="pb0 pt0 bg-color-third" data-name="Title">
+          <div class="container">
+            <div class="pt8 pb8 text-center bg-color-third">
+              <h6 class="mb-0 font-weight-bold">
+                FOLLOW OUR INSTAGRAM, AND GET PROMOTIONS!
+              </h6>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div id="instafeed-section" class="row w-100 mx-0"></div>
+        </section>
+        <script src="/dym_website/static/src/js/instafeed.js"></script>
+        <section class="s_text_block pb24 bg-color-primary pt24" data-name="Text block" id="Daya_Motor" data-anchor="true">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 col-md-2">
+                <h5 class="font-weight-bold">Tentang Kami</h5>
+                <div>
+                  <div>
+                    <a href="/company-profile/" class="text-decoration-none text-white">Daya Motor</a>
+                  </div>
+                  <div>
+                    <a href="/blog/berita-2/" class="text-decoration-none text-white">Berita</a>
+                  </div>
+                  <div>
+                    <a href="https://dess.daya-motor.com/id/jobs" class="text-decoration-none text-white">Karir</a>
+                  </div>
+                  <div>
+                    <a href="#" class="text-decoration-none text-white">Kontak</a>
+                  </div>
+                  <br />
+                </div>
+              </div>
+              <div class="col-6 col-md-2">
+                <h5 class="font-weight-bold">Produk</h5>
+                <div>
+                  <div>
+                    <a href="/shop/category/3" class="text-decoration-none text-white">Motor Cub</a>
+                  </div>
+                  <div>
+                    <a href="/shop/category/2" class="text-decoration-none text-white">Motor Matic</a>
+                  </div>
+                  <div>
+                    <a href="/shop/category/1" class="text-decoration-none text-white">Motor Sport</a>
+                  </div>
+                  <div>
+                    <a href="/shop/category/4" class="text-decoration-none text-white">Big Bike</a>
+                  </div>
+                  <br />
+                </div>
+              </div>
+              <div class="col-6 col-md-2">
+                <h5 class="font-weight-bold">Jaringan</h5>
+                <div>
+                  <div>
+                    <a href="/after-sales/" class="text-decoration-none text-white">After Sales</a>
+                  </div>
+                  <div>
+                    <a href="#" class="text-decoration-none text-white">Community</a>
+                  </div>
+                  <div>
+                    <a href="#" class="text-decoration-none text-white">Club</a>
+                  </div>
+                  <div>
+                    <a href="/dealers/" class="text-decoration-none text-white">Dealers</a>
+                  </div>
+                  <div>
+                    <a href="/safety-riding/" class="text-decoration-none text-white">Safety Riding</a>
+                  </div>
+                  <br />
+                </div>
+              </div>
+              <div class="col-6 col-md-2">
+                <h5 class="font-weight-bold">Highlights</h5>
+                <div>
+                  <div>
+                    <a href="/blog/promo-3/" class="text-decoration-none text-white">Promotion</a>
+                  </div>
+                  <div>
+                    <a href="/after-sales/spare-parts/" class="text-decoration-none text-white">Parts dan Aksesoris</a>
+                  </div>
+                  <div>
+                    <a href="#" class="text-decoration-none text-white">FAQ </a>
+                  </div>
+                  <div>
+                    <a href="#" class="text-decoration-none text-white">Social Media</a>
+                  </div>
+                  <br />
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <h5 class="font-weight-bold">PT. Daya Anugrah Mandiri</h5>
+                <p>
+                  Jl. Soekarno-Hatta No.158, Batununggal, Kec. Bandung Kidul,
+                  Kota Bandung, Jawa Barat 40266
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="s_text_block bg-color-primary pt0 pb24" data-name="Text block">
+          <div class="container">
+            <div class="row">
+              <div class="col d-flex justify-content-end">
+                <a href="https://play.google.com/store/apps/details?id=id.co.dayagroup.alwaysdaya.dam&amp;hl=in" title="daya-auto">
+                  <img class="img-fluid o_we_custom_image" src="/dym_website/static/src/img/logo-daya-auto.png" style="height: 76px; width: 101px" />
+                </a>
+              </div>
+              <div class="col m-auto">
+                <div class="row">
+                  <div class="col-1">
+                    <a href="https://www.facebook.com/HondaDayaMotor518" class="fa fa-2x fa-facebook-square text-white"></a>
+                  </div>
+                  <div class="col-1">
+                    <a href="https://www.instagram.com/honda.daya.motor/" class="fa fa-2x fa-instagram text-white"></a>
+                  </div>
+                  <div class="col-1">
+                    <a href="https://www.youtube.com/channel/UCGaU0BVZI-3xlNQSkKEYJqQ/featured" class="fa fa-2x fa-youtube-play text-white"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-color-third p-2" data-name="Text block">
+          <div class="container">
+            <div class="text-center">
+              <h6 class="m-0">
+                2022
+                <span class="fa fa-copyright"></span>
+                DAYA MOTOR - ALL RIGHTS RESERVED
+              </h6>
+            </div>
+          </div>
+        </section>
+      </div>
+    </xpath>
+  </template>
+</odoo>

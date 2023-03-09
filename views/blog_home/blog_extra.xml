@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="post_list_home" inherit_id="dym_website.blog_home" name="Post List Home">
+        <!-- <t t-call="website_blog.blog_post_short"></t> -->
+
+    </template>
+</odoo>

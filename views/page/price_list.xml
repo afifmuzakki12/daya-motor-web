@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="pricelist_page" name="Pricelist Page">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <body onload="findMyState()">
+          <div class="live-chat-riri">
+            <a href="/live-chat/">
+              <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+            </a>
+          </div>
+          <!-- <section class="s_features pb0 bg-color-secondary pt24 pb24" data-name="Features">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-1 offset-lg-1 pt24 pb24 content-position-center">
+                  <img class="img-fluid o_we_custom_image mr-3 float-left padding-small" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+                </div>
+                <div class="col-lg-4 m-auto text-position-center">
+                  <div>
+                    <h3 class="font-weight-bold">
+                    Dealer Terdekat
+                    </h3>
+                  </div>
+                  <div>
+                    <a href="/dealer-terdekat" class="text-decoration-none text-color-primary font-weight-bold">
+                    Cari dealer terdekatmu &gt;
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-1 offset-lg-1 pt24 pb24 content-position-center">
+                  <img class="img-fluid o_we_custom_image mr-3 float-left padding-small" src="/dym_website/static/src/img/price-list.svg" />
+                </div>
+                <div class="col-lg-4 m-auto text-position-center">
+                  <div>
+                    <h3 class="font-weight-bold">
+                    Pricelist
+                    </h3>
+                  </div>
+                  <div>
+                    <a href="/pricelist" class="text-decoration-none text-color-primary font-weight-bold">
+                    Cari dealer terdekatmu &gt;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+          <section class="bg-color-secondary pt24 pb24" data-name="Features">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="row h-100">
+                    <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                      <img class="img-fluid" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+                    </div>
+                    <div class="col-12 col-md-9 text-center-responsive">
+                      <div>
+                        <h4 class="font-weight-bold">
+                    Dealer Terdekat
+                        </h4>
+                      </div>
+                      <div>
+                        <a href="/dealer-terdekat" class="text-decoration-none">
+                          <p class="text-color-primary font-weight-bold lh-small">
+                      Cari dealer terdekatmu &gt;
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row h-100">
+                    <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                      <img class="img-fluid" src="/dym_website/static/src/img/price-list.svg" />
+                    </div>
+                    <div class="col-12 col-md-9 text-center-responsive mt-auto">
+                      <div>
+                        <h4 class="font-weight-bold">
+                    Unit Pricelist
+                        </h4>
+                      </div>
+                      <div>
+                        <a href="/pricelist" class="text-decoration-none">
+                          <p class="text-color-primary font-weight-bold lh-small">
+                    Cari dealer terdekatmu &gt;
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="container pt24 pb24">
+            <button class="btn btn-primary m-auto">
+              <span id="status" class="pr-4"></span>
+              <i class="fa fa-paper-plane" />
+            </button>
+            <!-- For development reason -->
+            <div class="d-none">
+            Latitude:
+              <span id="user-lat"></span>
+            </div>
+            <div class="d-none">
+            Longitude:
+              <span id="user-long"></span>
+            </div>
+          </section>
+          <script src="/dym_website/static/src/js/geolocation.js"></script>
+          <section>
+            <div class="container">
+              <p class="text-center font-weight-bold text-muted text-justify"><span class="text-color-primary">*</span> Harga Unit dibawah ini merupakan harga OTR Jakarta mulai 31 Oktober 2022.</p>
+              <p class="text-center font-weight-bold text-muted text-justify"><span class="text-color-primary">*</span> Syarat dan ketentuan berlaku. Harga dapat berbeda sesuai dengan lokasi anda. Untuk info selengkapnya bisa ditanyakan melalui fitur <a href="/live-chat"><span class="text-color-primary">Live Chat</span></a> atau mengunjungi <a href="/dealer-terdekat"><span class="text-color-primary">Dealer Daya Motor</span></a> terdekat. </p>
+            </div>
+          </section>
+          <section class="s_tabs o_colored_level pb0 pt24" data-vcss="001" data-snippet="s_tabs" data-name="Tabs">
+            <div class="container">
+              <div class="s_tabs_main">
+                <div class="s_tabs_nav mb-3">
+                  <ul class="nav nav-pills justify-content-center nav-fill" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-bold active" id="nav_tabs_link_1666167394767_165" data-toggle="tab" href="#nav_tabs_content_1666167394767_165" role="tab" aria-controls="nav_tabs_content_1666167394767_165" aria-selected="false">Matic</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_166" data-toggle="tab" href="#nav_tabs_content_1666167394767_166" role="tab" aria-controls="nav_tabs_content_1666167394767_166" aria-selected="false">Sport</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_167" data-toggle="tab" href="#nav_tabs_content_1666167394767_167" role="tab" aria-controls="nav_tabs_content_1666167394767_167" aria-selected="true">Cub</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_168" data-toggle="tab" href="#nav_tabs_content_1666167394767_168" role="tab" aria-controls="nav_tabs_content_1666167394767_168" aria-selected="false">Big Bike</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="s_tabs_content tab-content">
+                  <div class="tab-pane fade active show" id="nav_tabs_content_1666167394767_165" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_165">
+                    <div class="row">
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda Beat</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">BeAT</button>
+                            <button class="btn btn-primary btn-sm">BeAT Street</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>BeAT CBS</td>
+                                <td>Rp. 17,720,000</td>
+                              </tr>
+                              <tr>
+                                <td>BeAT Street</td>
+                                <td>Rp. 18,376,000</td>
+                              </tr>
+                              <tr>
+                                <td>BeAT CBS ISS</td>
+                                <td>Rp. 18,426,000</td>
+                              </tr>
+                              <tr>
+                                <td>BeAT Deluxe</td>
+                                <td>Rp. 18,572,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda Genio</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">Genio</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Genio CBS</td>
+                                <td>Rp. 18,880,000</td>
+                              </tr>
+                              <tr>
+                                <td>Genio CBS-ISS</td>
+                                <td>Rp. 19,475,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda Scoopy</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">Scoopy</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Scoopy Fashion</td>
+                                <td>Rp. 21,553,000</td>
+                              </tr>
+                              <tr>
+                                <td>Scoopy Sporty</td>
+                                <td>Rp. 21,553,000</td>
+                              </tr>
+                              <tr>
+                                <td>Scoopy Prestige</td>
+                                <td>Rp. 22,315,000</td>
+                              </tr>
+                              <tr>
+                                <td>Scoopy Stylish</td>
+                                <td>Rp. 22,315,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda Vario</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">Vario 125</button>
+                            <button class="btn btn-primary btn-sm">Vario 160</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Vario 125 CBS</td>
+                                <td>Rp. 22,350,000</td>
+                              </tr>
+                              <tr>
+                                <td>Vario 125 CBS-ISS</td>
+                                <td>Rp. 24,000,000</td>
+                              </tr>
+                              <tr>
+                                <td>Vario 125 CBS-ISS SP</td>
+                                <td>Rp. 24,250,000</td>
+                              </tr>
+                              <tr>
+                                <td>Vario 160 CBS</td>
+                                <td>Rp. 26,339,000</td>
+                              </tr>
+                              <tr>
+                                <td>Vario 160 ABS</td>
+                                <td>Rp. 29,064,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda PCX</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">PCX</button>
+                            <button class="btn btn-primary btn-sm">PCX e:HEV</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>PCX - CBS</td>
+                                <td>Rp. 32,079,000</td>
+                              </tr>
+                              <tr>
+                                <td>PCX - ABS</td>
+                                <td>Rp. 35,510,000</td>
+                              </tr>
+                              <tr>
+                                <td>PCX e:HEV</td>
+                                <td>Rp. 45,045,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda ADV 160</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">ADV 160</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>ADV 160 - CBS</td>
+                                <td>Rp. 36,000,000</td>
+                              </tr>
+                              <tr>
+                                <td>ADV 160 - ABS</td>
+                                <td>Rp. 39,250,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 pb24">
+                        <h5 class="text-black font-weight-bold">Honda Forza</h5>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <p class="text-muted m-0">Lihat Produk:</p>
+                          </div>
+                          <div class="col-md-auto p-0 pb-2 pl-2">
+                            <button class="btn btn-primary btn-sm">Forza</button>
+                          </div>
+                        </div>
+                        <div class="border br10">
+                          <table class="table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                <th scope="col" class="th-custom-right">Harga</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Forza</td>
+                                <td>Rp. 90,313,000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav_tabs_content_1666167394767_166" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_166">
+                    <div class="oe_structure oe_empty">
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CB150 Verza</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CB150 Verza</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="td-custom">CB150 Verza SW Masculine Black</td>
+                                  <td>Rp. 20,565,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150 Verza CW Macho Matte Black</td>
+                                  <td >Rp. 21,227,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150 Verza CW Bold Red	</td>
+                                  <td>Rp. 21,227,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Sonic 150R</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">Sonic 150R</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Sonic 150R Activo Black</td>
+                                  <td>Rp. 24,132,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Sonic 150R Energetic Red</td>
+                                  <td>Rp. 24,132,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Sonic 150R Aggresso Matte Black</td>
+                                  <td>Rp. 24,535,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Sonic 150R Honda Racing Red</td>
+                                  <td>Rp. 24,535,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CB150R Streetfire</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CB150R Streetfire</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="td-custom">CB150R Streetfire - STD Macho Black</td>
+                                  <td>Rp. 30,111,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150R Streetfire - STD Stinger Red Black</td>
+                                  <td >Rp. 30,111,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150R Streetfire – SE Fury Matte Red</td>
+                                  <td>Rp. 30,925,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150R Streetfire – SE Raptor Matte Black</td>
+                                  <td>Rp. 30,925,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CB150R Streetfire - SE Fury Amored Matte Grey</td>
+                                  <td>Rp. 30,925,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CB150X</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CB150X</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>CB150X - Amazon Matte Green</td>
+                                  <td>Rp. 33,660,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CB150X - Mandala Red</td>
+                                  <td>Rp. 33,660,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CB150X - Volcano Matte Black (SE)</td>
+                                  <td>Rp. 34,165,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CRF150L</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CRF150L</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="td-custom">CRF150L- Extreme Black</td>
+                                  <td>Rp. 35,384,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CRF150L- Extreme Red</td>
+                                  <td >Rp. 35,384,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CRF150L- Extreme White</td>
+                                  <td >Rp. 35,384,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CRF150L- Extreme Green</td>
+                                  <td >Rp. 35,384,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CBR150R</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CBR150R</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>CBR150R Victory Black Red Non ABS</td>
+                                  <td>Rp. 36,741,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Dominator Red Black Non ABS</td>
+                                  <td>Rp. 36,741,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Matte Black Non ABS</td>
+                                  <td>Rp. 36,741,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Honda Racing Red Non ABS</td>
+                                  <td>Rp. 37,447,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Victory Black Red ABS</td>
+                                  <td>Rp. 40,817,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Dominator Red Black ABS</td>
+                                  <td>Rp. 40,817,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Honda Racing Red ABS</td>
+                                  <td>Rp. 41,523,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R Tricolor ABS</td>
+                                  <td>Rp. 41,523,000</td>
+                                </tr>
+                                <tr>
+                                  <td>CBR150R MotoGP Edition ABS</td>
+                                  <td>Rp. 41,726,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CBR250RR</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CBR250RR</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="td-custom">CBR250RR - STD Black Freedom</td>
+                                  <td>Rp. 62,850,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CBR250RR – STD Mat Gunpowder Black Metallic</td>
+                                  <td >Rp. 67,650,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CBR250RR - SP Mystique Blue</td>
+                                  <td>Rp. 75,150,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CBR250RR – SPQS Bravery Red Black</td>
+                                  <td>Rp. 79,200,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CBR250RR – SPQS Honda Racing Red</td>
+                                  <td >Rp. 79,800,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">CBR250RR - SPQS Honda Tricolor</td>
+                                  <td>Rp. 79,800,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda ST125 Dax</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">ST125 Dax</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>ST125 Dax Pearl Nebula Red</td>
+                                  <td>Rp. 81,750,000</td>
+                                </tr>
+                                <tr>
+                                  <td>ST125 Dax Pearl Cadet Gray</td>
+                                  <td>Rp. 81,750,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Monkey</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">Monkey</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="td-custom">Monkey Pearl Nebula Red</td>
+                                  <td>Rp. 82,533,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">Monkey Banana Yellow</td>
+                                  <td >Rp. 82,533,000</td>
+                                </tr>
+                                <tr>
+                                  <td class="td-custom">Monkey Pearl Shining Black</td>
+                                  <td>Rp. 82,533,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CRF250 RALLY</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CRF250 RALLY</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>CRF250 RALLY - Extreme Red</td>
+                                  <td>Rp. 92,145,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav_tabs_content_1666167394767_167" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_167">
+                    <div class="oe_structure oe_empty">
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Revo</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">Revo</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Revo Fit</td>
+                                  <td>Rp. 15,644,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Revo X</td>
+                                  <td>Rp. 17,359,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Supra X</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">Supra X 125 FI</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Supra X 125 Spoke FI</td>
+                                  <td>Rp. 18,785,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Supra X 125 CW FI</td>
+                                  <td>Rp. 19,923,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Supra GTR</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">GTR 150</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Supra GTR 150 Sporty</td>
+                                  <td>Rp. 24,637,000</td>
+                                </tr>
+                                <tr>
+                                  <td>Supra GTR 150 Exclusive</td>
+                                  <td>Rp. 24,889,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda Super Cub C125</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">Supercub C125</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Super Cub C125</td>
+                                  <td>Rp. 76,689,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6 pb24">
+                          <h5 class="text-black font-weight-bold">Honda CT125</h5>
+                          <div class="row">
+                            <div class="col-md-auto">
+                              <p class="text-muted m-0">Lihat Produk:</p>
+                            </div>
+                            <div class="col-md-auto p-0 pb-2 pl-2">
+                              <button class="btn btn-primary btn-sm">CT125</button>
+                            </div>
+                          </div>
+                          <div class="border br10">
+                            <table class="table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="td-custom th-custom-left">Tipe</th>
+                                  <th scope="col" class="th-custom-right">Harga</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>CT 125</td>
+                                  <td>Rp. 81,065,000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav_tabs_content_1666167394767_168" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_168">
+                    <div class="oe_structure oe_empty">
+                      <h3>Pricelist Big Bike</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </body>
+      </div>
+    </t>
+  </template>
+</odoo>

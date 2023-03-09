@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="home_page" name="Home Page">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <section id="myCarousel1665046911785" class="carousel slide min-height-unset" data-interval="5000" data-name="Carousel">
+          <div class="carousel-inner min-height-unset">
+            <div class="carousel-item active min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_1.jpg" alt="First slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_2.jpg" alt="Second slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_3.jpg" alt="Third slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_4.jpg" alt="Fourth slide"/>
+            </div>
+          </div>
+          <div class="bottom-right">
+            <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </div>
+            <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+              <span class="sr-only">Next</span>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="s_features pb0 bg-color-secondary pt24 pb24" data-name="Features">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-1 offset-lg-1 pt24 pb24 content-position-center">
+                <img class="img-fluid o_we_custom_image mr-3 float-left padding-small" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+              </div>
+              <div class="col-lg-4 m-auto text-position-center">
+                <div>
+                  <h3 class="font-weight-bold">
+                    Dealer Terdekat
+                  </h3>
+                </div>
+                <div>
+                  <a href="/dealer-terdekat" class="text-decoration-none text-color-primary font-weight-bold">
+                    Cari dealer terdekatmu &gt;
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-1 offset-lg-1 pt24 pb24 content-position-center">
+                <img class="img-fluid o_we_custom_image mr-3 float-left padding-small" src="/dym_website/static/src/img/price-list.svg" />
+              </div>
+              <div class="col-lg-4 m-auto text-position-center">
+                <div>
+                  <h3 class="font-weight-bold">
+                    Pricelist
+                  </h3>
+                </div>
+                <div>
+                  <a href="/pricelist" class="text-decoration-none text-color-primary font-weight-bold">
+                    Cari dealer terdekatmu &gt;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="bg-color-secondary pt24 pb24" data-name="Features">
+          <div class="container">
+            <div class="row mb-2">
+              <div class="col text-center">
+                <img class="img-fluid" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+              </div>
+              <div class="col text-center">
+                <img class="img-fluid" src="/dym_website/static/src/img/price-list.svg" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-center">
+                <h4 class="font-weight-bold">
+                    Dealer Terdekat
+                </h4>
+              </div>
+              <div class="col text-center my-auto">
+                <h4 class="font-weight-bold">
+                    Pricelist
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-center">
+                <a href="/dealer-terdekat" class="text-decoration-none">
+                  <p class="text-color-primary font-weight-bold lh-small">
+                      Cari dealer terdekatmu &gt;
+                  </p>
+                </a>
+              </div>
+              <div class="col text-center">
+                <a href="/pricelist" class="text-decoration-none">
+                  <p class="text-color-primary font-weight-bold lh-small">
+                    Cari dealer terdekatmu &gt;
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <section class="bg-color-secondary pt24 pb24" data-name="Features">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="row h-100">
+                  <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                    <img class="img-fluid" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+                  </div>
+                  <div class="col-12 col-md-9 text-center-responsive">
+                    <div>
+                      <h4 class="font-weight-bold">
+                    Dealer Terdekat
+                      </h4>
+                    </div>
+                    <div>
+                      <a href="/dealer-terdekat" class="text-decoration-none">
+                        <p class="text-color-primary font-weight-bold lh-small">
+                      Cari dealer terdekatmu &gt;
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row h-100">
+                  <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                    <img class="img-fluid" src="/dym_website/static/src/img/price-list.svg" />
+                  </div>
+                  <div class="col-12 col-md-9 text-center-responsive mt-auto">
+                    <div>
+                      <h4 class="font-weight-bold">
+                    Unit Pricelist
+                      </h4>
+                    </div>
+                    <div>
+                      <a href="/pricelist" class="text-decoration-none">
+                        <p class="text-color-primary font-weight-bold lh-small">
+                    Cari dealer terdekatmu &gt;
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="live-chat-riri">
+          <a href="/live-chat/">
+            <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+          </a>
+        </div>
+        <section class="pb0 pt0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb16 bg-100 text-center">
+                <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Produk Terbaru
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 col-md-3 pb24">
+                <div class="card bg-white br10 h-100">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/vario160-unit.svg" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold br10">
+                    <div class="text-color-primary">
+                      <p class="mb-0">Honda Vario 160</p>
+                    </div>
+                    <div class="text-muted">
+                      <p class="mb0 small font-weight-bold">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 23.997.000,-</p>
+                    </div>
+                    <div class="s_btn text-center" data-name="Button">
+                      <a href="/shop/" class="btn btn-secondary btn-sm w-100 px-1">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 pb24">
+                <div class="card bg-white br10 h-100">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/suprax125-unit.svg" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold br10">
+                    <div class="text-color-primary">
+                      <p class="mb-0">Honda Supra X 125</p>
+                    </div>
+                    <div class="text-muted">
+                      <p class="mb0 small font-weight-bold">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 19.669.000,-</p>
+                    </div>
+                    <div class="s_btn text-center" data-name="Button">
+                      <a href="/shop/" class="btn btn-secondary btn-sm w-100 px-1">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 pb24">
+                <div class="card bg-white br10 h-100">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/cb150x-unit.svg" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold br10">
+                    <div class="text-color-primary">
+                      <p class="mb-0">Honda CB150X</p>
+                    </div>
+                    <div class="text-muted">
+                      <p class="mb0 small font-weight-bold">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 22.994.000,-</p>
+                    </div>
+                    <div class="s_btn text-center" data-name="Button">
+                      <a href="/shop/" class="btn btn-secondary btn-sm w-100 px-1">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 pb24">
+                <div class="card bg-white br10 h-100">
+                  <img class="card-img-top h-75" src="/dym_website/static/src/img/ct125-unit.svg" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                  <div class="card-body font-weight-bold br10">
+                    <div class="text-color-primary">
+                      <p class="mb-0">Honda CT125</p>
+                    </div>
+                    <div class="text-muted">
+                      <p class="mb0 small font-weight-bold">Harga Mulai</p>
+                    </div>
+                    <div class="text-dark">
+                      <p>Rp. 72.994.000,-</p>
+                    </div>
+                    <div class="s_btn text-center" data-name="Button">
+                      <a href="/shop/" class="btn btn-secondary btn-sm w-100 px-1">Selengkapnya &amp;gt;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb0 pt0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb16 bg-100 text-center">
+                <div class="s_btn text-center pb0 pt0" data-name="Button">
+                  <a href="/shop/" class="btn btn-primary">Lihat Unit Lainnya &amp;gt;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pt0 pb0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb0 text-center">
+                <h1 class="s_title_default">
+                  <span class="text-color-primary font-weight-bold">
+                    Berita Terbaru
+                  </span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pt0 pb0 bg-100">
+          <div class="container card-deck m-auto">
+            <div class="card br10">
+              <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+              <small>
+                <div class="card-body text-muted font-weight-bold">
+                  <div class="row">
+                    <div class="col">
+                      <i class="fa fa-clock-o fa-lg" />
+                      <span>09 Juni 2022</span>
+                    </div>
+                    <div class="col">
+                      <i class="fa fa-user fa-lg" />
+                      <span>Riswan TM</span>
+                    </div>
+                  </div>
+                </div>
+              </small>
+              <div class="card-body br10 pt0">
+                <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          4 Tips Merawat Tombol Starter Motor Agar Tetap Awet
+                </p>
+              </div>
+            </div>
+            <div class="card br10">
+              <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-2.png" alt="Card image cap" />
+              <small>
+                <div class="card-body text-muted font-weight-bold">
+                  <div class="row">
+                    <div class="col">
+                      <i class="fa fa-clock-o fa-lg" />
+                      <span>09 Juni 2022</span>
+                    </div>
+                    <div class="col">
+                      <i class="fa fa-user fa-lg" />
+                      <span>Riswan TM</span>
+                    </div>
+                  </div>
+                </div>
+              </small>
+              <div class="card-body br10 pt0">
+                <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Mending Beli Motor Cash Atau Kredit
+                </p>
+              </div>
+            </div>
+            <div class="card br10">
+              <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-3.png" alt="Card image cap" />
+              <small>
+                <div class="card-body text-muted font-weight-bold">
+                  <div class="row">
+                    <div class="col">
+                      <i class="fa fa-clock-o fa-lg" />
+                      <span>09 Juni 2022</span>
+                    </div>
+                    <div class="col">
+                      <i class="fa fa-user fa-lg" />
+                      <span>Riswan TM</span>
+                    </div>
+                  </div>
+                </div>
+              </small>
+              <div class="card-body br10 pt0">
+                <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Kapan Kamu Harus Ganti Oli Motor ?
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <section>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <section class="bg-100 pt24 pb24">
+                <div class="container card-deck m-auto">
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          4 Tips Merawat Tombol Starter Motor Agar Tetap Awet
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Mending Beli Motor Cash Atau Kredit
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Kapan Kamu Harus Ganti Oli Motor ?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="carousel-item">
+              <section class="bg-100 pt24 pb24">
+                <div class="container card-deck m-auto">
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          4 Tips Merawat Tombol Starter Motor Agar Tetap Awet
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Mending Beli Motor Cash Atau Kredit
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Kapan Kamu Harus Ganti Oli Motor ?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="carousel-item">
+              <section class="bg-100 pt24 pb24">
+                <div class="container card-deck m-auto">
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          4 Tips Merawat Tombol Starter Motor Agar Tetap Awet
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Mending Beli Motor Cash Atau Kredit
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card br10">
+                    <img class="card-img-top m-2 br20 w-auto h-60" src="/dym_website/static/src/img/berita-1.png" alt="Card image cap" />
+                    <small>
+                      <div class="card-body text-muted font-weight-bold">
+                        <div class="row">
+                          <div class="col">
+                            <i class="fa fa-clock-o fa-lg" />
+                            <span>09 Juni 2022</span>
+                          </div>
+                          <div class="col">
+                            <i class="fa fa-user fa-lg" />
+                            <span>Riswan TM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </small>
+                    <div class="card-body br10 pt0">
+                      <p class="card-text text-left text-black border-top-0 pt0 text-position-center font-weight-bold">
+                          Kapan Kamu Harus Ganti Oli Motor ?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section> -->
+        <section class="pt0 pb0 bg-100" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt0 pb0 bg-100 text-center">
+                <div class="s_btn pt16 pb16 text-center" data-name="Button">
+                  <a href="/blog/berita-2/" class="btn btn-primary">Lihat Berita Lainnya &amp;gt;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+</odoo>

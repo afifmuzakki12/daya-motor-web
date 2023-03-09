@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- tree view service -->
+        <record id="view_pricelist_service_tree" model="ir.ui.view">
+            <field name="name">pricelist.service.tree</field>
+            <field name="model">pricelist.service</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Service">
+                    <field name="unit_name"/>
+                    <field name="service_price"/>
+                    <field name="promo_service_price"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

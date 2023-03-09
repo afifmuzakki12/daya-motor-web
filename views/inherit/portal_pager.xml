@@ -1,0 +1,19 @@
+<odoo>
+    <template id="portal_pager_custom" inherit_id="portal.pager" customize_show="True" name="Portal Pager Custom" priority="20">
+        <xpath expr="//ul" position="replace">
+            <ul t-if="pager['page_count'] &gt; 1" t-attf-class="#{ classname or '' } pagination m-0 #{_classes}" t-att-style="style or None">
+                <li t-attf-class="page-item #{'disabled' if pager['page']['num'] == 1 else ''}">
+                    <a t-att-href=" pager['page_previous']['url'] if pager['page']['num'] != 1 else None" class="page-link">Prev</a>
+                </li>
+                <t t-foreach="pager['pages']" t-as="page">
+                    <li t-attf-class="page-item #{'active' if page['num'] == pager['page']['num'] else ''}">
+                        <a t-att-href="page['url']" class="page-link" t-raw="page['num']"/>
+                    </li>
+                </t>
+                <li t-attf-class="page-item #{'disabled' if pager['page']['num'] == pager['page_count'] else ''}">
+                    <a t-att-href="pager['page_next']['url'] if pager['page']['num'] != pager['page_count'] else None" class="page-link">Next</a>
+                </li>
+            </ul>
+        </xpath>
+    </template>
+</odoo>

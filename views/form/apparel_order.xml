@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="form_apparel_order" name="Apparel Form">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <t t-if="submitted">
+        </t>
+        <t t-else="">
+          <section class="s_text_image pt0 pb0" data-name="Image - Text">
+            <div>
+              <img src="/dym_website/static/src/img/banner-apparel.png" class="container-max-width" alt="Odoo • Image and Text" title="banner-apparel" aria-describedby="tooltip730266" />
+            </div>
+          </section>
+          <section class="pb0 pt0" data-name="Title">
+            <div class="container">
+              <h2 class="separator font-weight-bold text-color-secondary">
+                <span class="pr-2">
+                  <img src="https://www.astra-honda.com/uploads/20200922160020_original.png" />
+                </span>INFORMASI PEMBELIAN
+              </h2>
+            </div>
+          </section>
+          <section class="container">
+            <form class="form" id="form_submit_form" action="/apparel-order" method="POST" onsubmit="return false, popupFunction()">
+              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+              <h4 class="text-left text-color-secondary font-weight-bold">
+              PILIH SUBTOPIK
+              </h4>
+              <div class="form-group">
+                <select class="form-control" id="exampleFormControlSelect1" name="subtopik">
+                  <option>Apparel</option>
+                </select>
+              </div>
+              <h4 class="text-left text-color-secondary font-weight-bold">
+              ISI DATA DIRI
+              </h4>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>NAMA</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Tulis Nama Anda" required="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>EMAIL</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="nama@gmail.com" required="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>NO HANDPHONE</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <input type="tel" name="phone" class="form-control" id="formGroupExampleInput2" placeholder="08XXXXXXXX" required="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>ALAMAT</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <textarea type="text" name="alamat" class="form-control" id="exampleFormControlTextarea1" placeholder="Tulis Alamat Anda" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>PROVINSI</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select class="custom-select mr-sm-2" name="provinsi" id="inlineFormCustomSelect" required="true">
+                      <option value="0">Pilih Provinsi</option>
+                      <option value="1">Jawa Barat</option>
+                      <option value="2">Banten</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>KOTA</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select class="custom-select mr-sm-2" name="kota" id="inlineFormCustomSelect" required="true">
+                      <option value="0">Pilih Kota</option>
+                      <option value="1">Bandung</option>
+                      <option value="2">Cirebon</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>MOTOR YANG DIMILIKI</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select id="unit-category" class="form-control" name="motor_dimiliki" required="true">
+                      <option value="">Choose...</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>VARIAN MOTOR</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select id="unit-variant" class="form-control" name="varian_motor" required="true">
+                      <option value="" selected="selected">Please select Motor Yang Dimiliki first</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>TAHUN PEMBUATAN MOTOR</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select id="dropdown-year" class="form-control" name="tahun_pembuatan" required="true">
+                      <option value="" selected="selected">Please select Varian Motor first</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-left text-color-secondary font-weight-bold">
+              PRODUK YANG DIMINATI
+              </h4>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>JENIS APPAREL</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <input readonly="readonly" type="text" name="jenis_apparel" class="form-control" id="formGroupExampleInput" value="Accessories" required="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>VARIAN APPAREL</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <input readonly="readonly" type="text" name="varian_apparel" class="form-control" id="formGroupExampleInput" value="All" required="true" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>RENCANA PEMBELIAN</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <select class="custom-select mr-sm-2" name="rencana_pembelian" required="true">
+                      <option value="1">1-2 Minggu</option>
+                      <option value="2">2-4 Minggu</option>
+                      <option value="3">Diatas 1 Bulan</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-left text-color-secondary font-weight-bold">
+              PESAN
+              </h4>
+              <div class="row">
+                <div class="col-lg-3">
+                  <p>TULIS PESAN</p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="form-group">
+                    <textarea type="text" name="tulis_pesan" class="form-control" placeholder="Tulis Pesan Anda" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center d-grid gap-2 col-6 mx-auto">
+                <input type="submit" class="btn btn-tertiary" value="Kirim"/>
+                <!-- The Modal -->
+                <div id="myModal" class="modal-popup">
+                  <span class="close-popup">&#215;</span>
+                  <img class="modal-content-popup" src="/dym_website/static/src/img/riri_thanks-apparel.png" />
+                </div>
+                <script src="/dym_website/static/src/js/popup.js"></script>
+              </div>
+              <script src="/dym_website/static/src/js/year_dropdown.js"></script>
+            </form>
+          </section>
+        </t>
+      </div>
+    </t>
+  </template>
+</odoo>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="replace_blog" inherit_id="website_blog.blog_post_short" name="Custom Blog">
+        <xpath expr="//t[@t-call='website_blog.index']" position="replace">
+            <t t-call="website_blog.index">
+                <t t-set="head">
+                    <link t-if="blog" t-att-href="'/blog/%s/feed' % (blog.id)" type="application/atom+xml" rel="alternate" title="Atom Feed"/>
+                    <meta t-if="active_tag_ids" name="robots" t-attf-content="none"/>
+                </t>
+                <!-- Check for active options: the stored value may be used in sub-templates too  -->
+                <t t-set="opt_blog_cards_design" t-value="request.website.viewref('website_blog.opt_blog_cards_design').active"/>
+                <t t-set="opt_blog_list_view" t-value="request.website.viewref('website_blog.opt_blog_list_view').active"/>
+                <t t-set="opt_blog_readable" t-value="request.website.viewref('website_blog.opt_blog_readable').active"/>
+                <t t-set="opt_blog_sidebar_show" t-value="request.website.viewref('website_blog.opt_blog_sidebar_show').active"/>
+                <div id="o_wblog_blog_top">
+                    <!-- Selectively display droppable-areas for 'all blogs' or single-blog pages -->
+                    <t t-if="not tag and not date_begin">
+                        <div id="o_wblog_blog_top_droppable">
+                            <t t-if="blog">
+                                <t t-set="oe_structure_blog_single_header_description">Edit the '
+                                    <t t-esc="blog.name"/>
+' page header.</t>
+                                <div t-field="blog.content" class="oe_structure" t-attf-id="oe_structure_blog_single_header_#{blog.id}" t-att-data-editor-sub-message="oe_structure_blog_single_header_description"/>
+                            </t>
+                            <t t-elif="blogs">
+                                <t t-set="oe_structure_blog_all_header_description">Edit the 'All Blogs' page header.</t>
+                                <div class="oe_structure" id="oe_structure_blog_all_header" t-att-data-editor-sub-message="oe_structure_blog_all_header_description"/>
+                            </t>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <!-- Droppable-area for filtered results (tags or date) -->
+                        <t t-set="oe_structure_blog_filtered_header_description">Edit the 'Filter Results' page header.</t>
+                        <div class="oe_structure" id="oe_structure_blog_filtered_header" t-att-data-editor-sub-message="oe_structure_blog_filtered_header_description"/>
+                    </t>
+                </div>
+                <!-- <t t-call="website_blog.blogs_nav"/> -->
+                <div class="live-chat-riri">
+                    <a href="/live-chat/">
+                      <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                    </a>
+                  </div>
+                <section>
+                    <t t-if="blog and blog.name == 'Promo'">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                    <h1 class="font-weight-bold text-color-primary">Promo</h1>
+                                    <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                        <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-elif="blog and blog.name == 'Berita'">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                    <h1 class="font-weight-bold text-color-primary">Berita</h1>
+                                    <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                        <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                    <h1 class="font-weight-bold text-color-primary">All Blog</h1>
+                                    <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                        <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </section>
+                <section id="o_wblog_index_content" t-att-class="opt_blog_cards_design and 'o_wblog_page_cards_bg'">
+                    <div class="container py-4">
+                        <div t-attf-class="row #{opt_blog_sidebar_show and 'justify-content-between' or 'justify-content-center'}">
+                            <div id="o_wblog_posts_loop_container" t-attf-class="col #{'o_wblog_read' if opt_blog_list_view else ''}">
+                                <t t-call="website_blog.posts_loop">
+                                    <t t-if="not blog" t-set="posts_list_show_parent_blog" t-value="True"/>
+                                </t>
+                                <t t-call="website.pager">
+                                    <t t-set="classname">justify-content-center</t>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </xpath>
+    </template>
+</odoo>

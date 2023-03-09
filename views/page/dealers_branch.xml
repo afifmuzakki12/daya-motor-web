@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="dealers_page" name="Dealers Page">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="live-chat-riri">
+                    <a href="/live-chat/">
+                      <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                    </a>
+                  </div>
+                <section class="pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Dealers
+                                </h1>
+                                <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                    <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1dlMAieo5qzNvYDKXVeAIN3SVrfs" width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </t>
+    </template>
+</odoo>

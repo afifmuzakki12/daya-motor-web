@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- form view estimated service -->
+        <record id="view_form_estimated_tree" model="ir.ui.view">
+            <field name="name">form.estimated.tree</field>
+            <field name="model">estimated.service</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Estimated Service">
+                    <field name="banner_estimated" widget="binary"></field>
+                    <field name="header_estimated"></field>
+                    <field name="text_estimated"></field>
+                    <field name="content_estimated"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

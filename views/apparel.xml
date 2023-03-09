@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="apparel_page" name="Apparel Page">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty" />
+      <div class="live-chat-riri">
+        <a href="/live-chat/">
+          <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+        </a>
+      </div>
+      <section class="s_text_image pt0 pb0" data-name="Image - Text">
+        <div>
+          <img src="/dym_website/static/src/img/banner-apparel.png" class="container-max-width" alt="Odoo • Image and Text" title="banner-apparel" aria-describedby="tooltip730266" />
+        </div>
+      </section>
+      <section class="s_tabs o_colored_level pt0 pb0" data-vcss="001" data-snippet="s_tabs" data-name="Tabs">
+        <div class="container">
+          <div class="s_tabs_main">
+            <div class="s_tabs_nav mb-3">
+              <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="nav_tabs_link_1666169152770_27" data-toggle="tab" href="#nav_tabs_content_1666169152770_27" role="tab" aria-controls="nav_tabs_content_1666169152770_27" aria-selected="false">Helmet</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav_tabs_link_1666169152770_28" data-toggle="tab" href="#nav_tabs_content_1666169152770_28" role="tab" aria-controls="nav_tabs_content_1666169152770_28" aria-selected="false">Jacket</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav_tabs_link_1666169152770_29" data-toggle="tab" href="#nav_tabs_content_1666169152770_29" role="tab" aria-controls="nav_tabs_content_1666169152770_29" aria-selected="true">Accessories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav_tabs_link_1666169152770_30" data-toggle="tab" href="#nav_tabs_content_1666169152770_30" role="tab" aria-controls="nav_tabs_content_1666169152770_30" aria-selected="true">Outfit</a>
+                </li>
+              </ul>
+            </div>
+            <div class="s_tabs_content tab-content">
+              <div class="tab-pane fade active show" id="nav_tabs_content_1666169152770_27" role="tabpanel" aria-labelledby="nav_tabs_link_1666169152770_27">
+                <section class="s_three_columns pt32 pb0" data-name="Columns">
+                  <div class="container">
+                    <div class="row d-flex align-items-stretch">
+                      <div class="s_col_no_bgcolor pt16 pb16 col-lg-3">
+                        <div class="card bg-white br10">
+                          <img class="card-img-top h-75" src="/dym_website/static/src/img/honda-black-mono-helmet.png" alt="Odoo - Sample 2 for three columns" data-original-title="" title="" aria-describedby="tooltip826951" />
+                          <div class="card-body font-weight-bold br10">
+                            <div class="text-color-primary">
+                              <p class="mb-0">HONDA BLACK MONO HELMET</p>
+                            </div>
+                            <div class="text-muted">
+                              <p class="mb0 small font-weight-bold">Harga</p>
+                            </div>
+                            <div class="text-dark">
+                              <p>Rp. 595.000,-</p>
+                            </div>
+                            <div class="s_btn text-center" data-name="Button">
+                              <a href="/apparel-detail/" class="btn btn-secondary stretched-link">Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="tab-pane fade" id="nav_tabs_content_1666169152770_28" role="tabpanel" aria-labelledby="nav_tabs_link_1666169152770_28">
+              <div class="oe_structure oe_empty">
+                <section class="s_text_block">
+                  <div class="container s_allow_columns">
+                    <h3>Apparel Jacket</h3>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav_tabs_content_1666169152770_29" role="tabpanel" aria-labelledby="nav_tabs_link_1666169152770_29">
+              <div class="oe_structure oe_empty">
+                <section class="s_text_block">
+                  <div class="container s_allow_columns">
+                    <h3>Apparel Accessories</h3>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav_tabs_content_1666169152770_30" role="tabpanel" aria-labelledby="nav_tabs_link_1666169152770_30">
+              <div class="oe_structure oe_empty">
+                <section class="s_text_block">
+                  <div class="container s_allow_columns">
+                    <h3>Apparel Outfit</h3>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </t>
+</template>
+</odoo>

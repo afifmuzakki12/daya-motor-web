@@ -1,0 +1,192 @@
+<odoo>
+    <data>
+        <!-- Action Service -->
+        <record id="action_service_list" model="ir.actions.act_window">
+            <field name="name">Daftar Service Price</field>
+            <field name="res_model">pricelist.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a Service Pricelist
+                </p>
+                <p>klik tombol create untuk bikin service price baru</p>
+            </field>
+        </record>
+
+        <!-- Action Unit -->
+        <record id="action_unit_list" model="ir.actions.act_window">
+            <field name="name">Daftar Unit Price</field>
+            <field name="res_model">pricelist.unit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a Unit Pricelist
+                </p>
+                <p>klik tombol create untuk bikin unit price baru</p>
+            </field>
+        </record>
+
+        <!-- Action Live Chat -->
+        <record id="action_form_livechat" model="ir.actions.act_window">
+            <field name="name">Result Form Live Chat</field>
+            <field name="res_model">form.livechat</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result form live chat
+                </p>
+                <p>klik tombol create untuk bikin result form live chat baru</p>
+            </field>
+        </record>
+
+        <!-- Action Service -->
+        <record id="action_form_service" model="ir.actions.act_window">
+            <field name="name">Result Form Service Order</field>
+            <field name="res_model">form.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result form service order
+                </p>
+                <p>klik tombol create untuk bikin result form service order baru</p>
+            </field>
+        </record>
+
+        <!-- Action Apparel -->
+        <record id="action_form_apparel" model="ir.actions.act_window">
+            <field name="name">Result Form Apparel Order</field>
+            <field name="res_model">form.apparel</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result form apparel order
+                </p>
+                <p>klik tombol create untuk bikin result form apparel order baru</p>
+            </field>
+        </record>
+
+        <!-- Action Test Ride -->
+        <record id="action_form_testride" model="ir.actions.act_window">
+            <field name="name">Result Form Test Ride Order</field>
+            <field name="res_model">test.ride.form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result form test ride order
+                </p>
+                <p>klik tombol create untuk bikin result form test ride order baru</p>
+            </field>
+        </record>
+
+        <!-- Action Unit Order -->
+        <record id="action_form_unit_order" model="ir.actions.act_window">
+            <field name="name">Result Form Unit Order</field>
+            <field name="res_model">form.unit.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result form unit order
+                </p>
+                <p>klik tombol create untuk bikin result form unit order baru</p>
+            </field>
+        </record>
+
+        <!-- Action Add Slider -->
+        <record id="action_add_slider" model="ir.actions.act_window">
+            <field name="name">Result Form Add Slider</field>
+            <field name="res_model">add.slider</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result add slider
+                </p>
+                <p>klik tombol create untuk bikin result add slider baru</p>
+            </field>
+        </record>
+
+        <!-- Action Booking Service -->
+        <record id="action_booking_service" model="ir.actions.act_window">
+            <field name="name">Booking Service Page</field>
+            <field name="res_model">booking.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result booking service
+                </p>
+                <p>klik tombol create untuk bikin result booking service baru</p>
+            </field>
+        </record>
+
+        <!-- Action Sparepart -->
+        <record id="action_sparepart_page" model="ir.actions.act_window">
+            <field name="name">Sparepart Page</field>
+            <field name="res_model">sparepart.page</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result sparepart
+                </p>
+                <p>klik tombol create untuk bikin result sparepart baru</p>
+            </field>
+        </record>
+
+        <!-- Action Estimated Service -->
+        <record id="action_estimated_service" model="ir.actions.act_window">
+            <field name="name">Sparepart Page</field>
+            <field name="res_model">estimated.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result estimated service
+                </p>
+                <p>klik tombol create untuk bikin result estimated service baru</p>
+            </field>
+        </record>
+
+        <!-- Action Spare Part Card -->
+        <record id="action_sparepart_card" model="ir.actions.act_window">
+            <field name="name">Sparepart Card</field>
+            <field name="res_model">sparepart.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result Sparepart Card
+                </p>
+                <p>klik tombol create untuk bikin result Sparepart Card baru</p>
+            </field>
+        </record>
+
+        <!-- Action Booking Service Card -->
+        <record id="action_booking_service_card" model="ir.actions.act_window">
+            <field name="name">Booking Service Card</field>
+            <field name="res_model">booking.service.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+				Click to add a result Booking Service Card
+                </p>
+                <p>klik tombol create untuk bikin result Booking Service Card baru</p>
+            </field>
+        </record>
+
+
+        <menuitem id="page_1" name="Page Configuration" parent="website.menu_website_configuration" sequence="10"/>
+        <menuitem id="menu_booking_service" name="Booking Service" parent="page_1" action="action_booking_service" sequence="10"/>
+        <menuitem id="menu_sparepart_page" name="Sparepart" parent="page_1" action="action_sparepart_page" sequence="10"/>
+        <menuitem id="menu_estimated_service" name="Estimated Service" parent="page_1" action="action_estimated_service" sequence="10"/>
+
+        <menuitem id="menu_sparepart_card" name="Sparepart Card" parent="page_1" action="action_sparepart_card" sequence="10"/>
+        <menuitem id="menu_booking_service_card" name="Booking Service Card" parent="page_1" action="action_booking_service_card" sequence="10"/>
+
+        <!-- <menuitem id="pricelist_0" name="Pricelist" sequence="20"/> -->
+        <menuitem id="pricelist_1" name="Daya Motor" parent="website.menu_website_configuration" sequence="10"/>
+        <menuitem id="menu_pricelist_service" name="Pricelist Service" parent="pricelist_1" action="action_service_list" sequence="10"/>
+        <menuitem id="menu_pricelist_unit" name="Pricelist Unit" parent="pricelist_1" action="action_unit_list" sequence="10"/>
+        <menuitem id="menu_form_chat" name="Form Live Chat" parent="pricelist_1" action="action_form_livechat" sequence="10"/>
+        <menuitem id="menu_form_service" name="Form Service Order" parent="pricelist_1" action="action_form_service" sequence="10"/>
+        <menuitem id="menu_form_apparel" name="Form Apparel Order" parent="pricelist_1" action="action_form_apparel" sequence="10"/>
+        <menuitem id="menu_form_testride" name="Form Test Ride" parent="pricelist_1" action="action_form_testride" sequence="10"/>
+        <menuitem id="menu_form_unit_order" name="Form Unit Order" parent="pricelist_1" action="action_form_unit_order" sequence="10"/>
+        <menuitem id="menu_add_slider" name="Add Slider" parent="pricelist_1" action="action_add_slider" sequence="10"/>
+    </data>
+</odoo>

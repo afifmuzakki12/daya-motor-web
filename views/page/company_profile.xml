@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="profile_page" name="Profile Page">
+        <!-- Add an element after the top menu  -->
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="live-chat-riri">
+                    <a href="/live-chat/">
+                      <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                    </a>
+                  </div>
+                <section class="s_text_image pt0 pb0" data-name="Image - Text">
+                    <div>
+                        <img src="/dym_website/static/src/img/compro.jpg" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="" aria-describedby="tooltip730266" />
+                    </div>
+                </section>
+                <section class="pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Profil Perusahaan
+                                </h1>
+                                <div class="s_hr text-left pt4 pb4" data-name="Separator">
+                                    <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pt0 pb24" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt0 pb0">
+                                <p class="s_title_default text-justify text-black">
+                  PT. Daya Anugrah Mandiri atau lebih dikenal Daya Motor
+                  merupakan anak perusahaan Daya Group yang bergerak di bidang
+                  dealership resmi sepeda motor Honda.
+                                    <br />
+                  Sejalan dengan makin bertumbuhnya industri otomotif di
+                  Indonesia, saat ini Daya Motor telah memiliki 90 cabang dan
+                  114 AHASS yang tersebar di 23 propinsi seluruh Indonesia
+                  dengan total 2.457 karyawan yang selalu siap sedia melayani
+                  Anda.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_tabs o_colored_level pb24 pt0" data-vcss="001" data-snippet="s_tabs" data-name="Tabs">
+                    <div class="container">
+                        <div class="s_tabs_main">
+                            <div class="s_tabs_nav mb-3">
+                                <ul class="nav nav-pills justify-content-center nav-fill" role="tablist">
+                                    <li class="nav-item">
+                                        <a name="nav_tabs_content_1666167394767_165" class="nav-link font-weight-bold active" id="nav_tabs_link_1666167394767_165" data-toggle="tab" href="#nav_tabs_content_1666167394767_165" role="tab" aria-controls="nav_tabs_content_1666167394767_165" aria-selected="false">Sejarah</a
+                    >
+                                    </li>
+                                    <li class="nav-item">
+                                        <a name="nav_tabs_content_1666167394767_166" class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_166" data-toggle="tab" href="#nav_tabs_content_1666167394767_166" role="tab" aria-controls="nav_tabs_content_1666167394767_166" aria-selected="false">Visi dan Misi</a
+                    >
+                                    </li>
+                                    <li class="nav-item">
+                                        <a name="nav_tabs_content_1666167394767_167" class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_167" data-toggle="tab" href="#nav_tabs_content_1666167394767_167" role="tab" aria-controls="nav_tabs_content_1666167394767_167" aria-selected="true">Value</a
+                    >
+                                    </li>
+                                    <li class="nav-item">
+                                        <a name="nav_tabs_content_1666167394767_168" class="nav-link font-weight-bold" id="nav_tabs_link_1666167394767_168" data-toggle="tab" href="#nav_tabs_content_1666167394767_168" role="tab" aria-controls="nav_tabs_content_1666167394767_168" aria-selected="false">Alamat</a
+                    >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="s_tabs_content tab-content">
+                            <div class="tab-pane fade active show" id="nav_tabs_content_1666167394767_165" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_165">
+                                <div class="container">
+                                    <div class="main-timeline-2">
+                                        <div class="timeline-2 left-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-daya.png" class="card-img-top img-fluid w-auto" alt="Responsive image" style="max-height: 150px;"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">Daya Motor</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>2011</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            ADIRA MOTOR kembali mengalami perubahan Nama
+                            Branding menjadi DAYA MOTOR bersamaan dengan
+                            didirikannya Daya Group (terdiri dari 5 perusahaan
+                            otomotif, karet, hingga kesehatan). Daya Motor
+                            sendiri hingga akhir tahun 2011 telah mengoprasikan
+                            lebih dari 80 cabang yang tersebar di berbagai
+                            pelosok Indonesia.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-2 right-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-adira-motor.png" class="card-img-top img-fluid w-auto" alt="Responsive image" />
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">Adira Motor</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>2007</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            DAYA MOTOR mengalami perubahan Merek dagang (nama
+                            branding) menjadi ADIRA MOTOR. Memiliki 56 Cabang di
+                            berbagai kota di Indonesia.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-2 left-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-daya-old.png" class="card-img-top img-fluid w-auto" alt="Responsive image" style="height: 150px;"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">Daya Motor</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>2002</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            Pada tanggal 6 Mei 2002, dilakukan pemisahan
+                            business unit dengan fokus penjualan retail dengan
+                            berbadan hukum PT. DAYA ANUGRAH MANDIRI, yang lebih
+                            dikenal dengan nama DAYA MOTOR. Mengoprasikan 12
+                            Cabang, sebagian besar di dareah Jawa Barat.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-2 right-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-daya-old.png" class="card-img-top img-fluid w-auto" alt="Responsive image" style="height: 150px;"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">PT. DAYA ADIRA MUSTIKA</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>1984</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            Diadakan perubahan secara Yuriditis menjadi
+                            Perseroan Terbatas dengan nama PT. DAYA ADIRA
+                            MUSTIKA yang dibagi menjadi 3 divisi : Honda
+                            Division Parts and Service Division Replacement
+                            Parts Division
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-2 left-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-daya-old.png" class="card-img-top img-fluid w-auto" alt="Responsive image" style="height: 150px;"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">PD Matras</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>1970</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            Pada 1970 PD Matras berdiri dan mulai memasarkan
+                            Sepeda Motor Honda. Selain itu, PD Matras menjadi
+                            agen produk-produk, seperti Oli Caltex, accu GS,
+                            busi Nippondenso, dan suku cadang lainnya. Dua tahun
+                            kemudian (1972), bisnis penjualan sepeda motor Honda
+                            ini dialihkan ke PD.Daya.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-2 right-2">
+                                            <div class="card p-4">
+                                                <div class="text-center">
+                                                    <img src="/dym_website/static/src/img/logo-daya-old.png" class="card-img-top img-fluid w-auto" alt="Responsive image" style="height: 150px;"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="font-weight-bold">Usaha Angkutan "PEKALIPAN"</h4>
+                                                    <div class="text-muted">
+                                                        <i class="fa fa-clock-o pr-2"></i>
+                                                        <span>1948</span>
+                                                    </div>
+                                                    <p class="mb-0">
+                            Pada tanggal 10 Agustus 1948 Bapak Raphael Adi
+                            Rachmat membuka usaha angkutan "PEKALIPAN"
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav_tabs_content_1666167394767_166" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_166">
+                                <div class="container">
+                                    <div class="row s_nb_column_fixed">
+                                        <div class="col-lg-12 s_title pt16 pb16">
+                                            <h2 class="s_title_default text-black font-weight-bold text-center">
+                        Visi
+                                            </h2>
+                                            <p class="text-center">
+                        Menjadi jaringan penjualan dan pelayanan purna jual
+                        sepeda motor Honda terbaik di Indonesia
+                                            </p>
+                                            <h2 class="s_title_default text-black font-weight-bold text-center">
+                        Misi
+                                            </h2>
+                                            <ol class="text-center p-0" style="list-style-position: inside;">
+                                                <li >Memberikan pelayanan terbaik bagi pelanggan</li>
+                                                <li >Menciptakan sinergi yang baik antara karyawan dan perusahaan</li>
+                                                <li >Membangun perusahaan yang selalu tumbuh dan berkembang</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav_tabs_content_1666167394767_167" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_167">
+                                <div class="container">
+                                    <div class="row s_nb_column_fixed">
+                                        <div class="col-lg-12 s_title pt16 pb16">
+                                            <h2 class="s_title_default text-black font-weight-bold text-center">
+                        VALUE
+                                            </h2>
+                                            <ol class="text-center p-0" style="list-style-position: inside;">
+                                                <li>Kejujuran dan integritas</li>
+                                                <li>Operasional yang handal</li>
+                                                <li>Inovasi</li>
+                                                <li>Kepedulian</li>
+                                                <li>Kerjasama tim</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav_tabs_content_1666167394767_168" role="tabpanel" aria-labelledby="nav_tabs_link_1666167394767_168">
+                                <div class="container">
+                                    <div class="row s_nb_column_fixed">
+                                        <div class="col-lg-12 s_title pt16 pb16">
+                                            <h2 class="s_title_default text-black font-weight-bold text-center">
+                        Head Office:
+                                            </h2>
+                                            <p class="text-center">
+                        Jl. Soekarno Hatta No. 518. Bandung 40266<br />
+                        Tlp. 022 7563060
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

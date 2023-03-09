@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="sale_address_kanban" inherit_id="website_sale.address_kanban" customize_show="True" name="Sale Address Kanban Custom">
+        <xpath expr="//div[@class='card-footer']" position="replace">
+            <div class="card-footer" t-if="not readonly">
+                <span class="btn-ship" t-att-style="'' if selected else 'display:none;'">
+                    <a role="button" href="#" class="btn btn-block btn-primary"><i class="fa fa-check"/> Kirim Ke Alamat Ini</a>
+                </span>
+                <span class="btn-ship" t-att-style="'' if not selected else 'display:none;'">
+                    <a role="button" href="#" class="btn btn-block btn-secondary">Pilih Alamat Ini</a>
+                </span>
+            </div>
+        </xpath>
+    </template>
+</odoo>

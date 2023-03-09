@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- tree view apparel -->
+        <record id="view_form_apparel_tree" model="ir.ui.view">
+            <field name="name">form.apparel.tree</field>
+            <field name="model">form.apparel</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Apparel">
+                    <field name="time_stamp"/>
+                    <field name="subtopik"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="alamat"/>
+                    <field name="provinsi"/>
+                    <field name="kota"/>
+                    <field name="motor_dimiliki"/>
+                    <field name="varian_motor"/>
+                    <field name="tahun_pembuatan"/>
+                    <field name="jenis_apparel"/>
+                    <field name="varian_apparel"/>
+                    <field name="rencana_pembelian"/>
+                    <!-- <field name="tulis_pesan"/> -->
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

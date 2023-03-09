@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="profile_portal" inherit_id="portal.portal_my_home" customize_show="True" name="Portal Custom">
+        <xpath expr="//div[@class='o_portal_my_home']" position="replace">
+            <div class="o_portal_my_home border border-dark br20 m-3 p-4">
+                <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
+                <h3 class="text-color-primary font-weight-bold">Riwayat Pemesanan</h3>
+                <div class="o_portal_docs list-group"></div>
+            </div>
+            <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </xpath>
+        <!-- <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="invoice_count" t-call="portal.portal_docs_entry">
+                <t t-set="title">Invoices &amp; Bills</t>
+                <t t-set="url" t-value="'/my/invoices'"/>
+                <t t-set="count" t-value="invoice_count"/>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="quotation_count" t-call="portal.portal_docs_entry">
+                <t t-set="title">Quotations</t>
+                <t t-set="url" t-value="'/my/quotes'"/>
+                <t t-set="count" t-value="quotation_count"/>
+            </t>
+            <t t-if="order_count" t-call="portal.portal_docs_entry">
+                <t t-set="title">Sales Orders</t>
+                <t t-set="url" t-value="'/my/orders'"/>
+                <t t-set="count" t-value="order_count"/>
+            </t>
+        </xpath> -->
+    </template>
+</odoo>

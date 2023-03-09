@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+admin_marketing,"admin_marketing","model_form_livechat","group_admin_marketing",1,1,1,1
+admin_it,"admin_it","model_form_livechat","group_admin_it",1,1,1,1

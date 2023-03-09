@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- form view booking service -->
+        <record id="view_form_booking_tree" model="ir.ui.view">
+            <field name="name">form.booking.tree</field>
+            <field name="model">booking.service</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Booking Service">
+                    <field name="banner_service" widget="binary"></field>
+                    <field name="header_service"></field>
+                    <field name="text_service"></field>
+                    <field name="header_card"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

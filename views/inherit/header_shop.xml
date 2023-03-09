@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+  <template id="replace_header_shop" inherit_id="website.layout" name="Custom Header Shop My Cart Link">
+    <xpath expr="//a[contains(@href, '/shop/cart')]" position="replace">
+      <a href="/shop/cart" class="nav-link">
+        <i class="fa fa-shopping-bag fa-lg text-white"/>
+        <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or ''" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>
+      </a>
+    </xpath>
+  </template>
+</odoo>

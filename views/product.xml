@@ -1,0 +1,232 @@
+<odoo>
+    <template id="product_unit_custom" inherit_id="website_sale.products" customize_show="True" name="Product Unit Page" priority="20">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="js_sale">
+                <div class="oe_structure oe_empty" id="oe_structure_website_sale_products_1"/>
+                <div class="oe_website_sale">
+                    <div class="live-chat-riri">
+                        <a href="/live-chat/">
+                            <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                        </a>
+                    </div>
+                    <section id="myCarousel1665046911785" class="carousel slide min-height-unset" data-interval="3000" data-name="Carousel">
+                        <div class="carousel-inner min-height-unset">
+                            <div class="carousel-item active min-height-unset">
+                                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_1.jpg" alt="First slide"/>
+                            </div>
+                            <div class="carousel-item min-height-unset">
+                                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_2.jpg" alt="Second slide"/>
+                            </div>
+                            <div class="carousel-item min-height-unset">
+                                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_3.jpg" alt="Third slide"/>
+                            </div>
+                            <div class="carousel-item min-height-unset">
+                                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_4.jpg" alt="Fourth slide"/>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </div>
+                            <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+                                <span class="sr-only">Next</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="bg-color-secondary pt24 pb24" data-name="Features">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row h-100">
+                                        <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                                            <img class="img-fluid" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+                                        </div>
+                                        <div class="col-12 col-md-9 text-center-responsive">
+                                            <div>
+                                                <h4 class="font-weight-bold">
+                    Dealer Terdekat
+                                                </h4>
+                                            </div>
+                                            <div>
+                                                <a href="/dealer-terdekat" class="text-decoration-none">
+                                                    <p class="text-color-primary font-weight-bold lh-small">
+                      Cari dealer terdekatmu &gt;
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row h-100">
+                                        <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                                            <img class="img-fluid" src="/dym_website/static/src/img/price-list.svg" />
+                                        </div>
+                                        <div class="col-12 col-md-9 text-center-responsive mt-auto">
+                                            <div>
+                                                <h4 class="font-weight-bold">
+                    Unit Pricelist
+                                                </h4>
+                                            </div>
+                                            <div>
+                                                <a href="/pricelist" class="text-decoration-none">
+                                                    <p class="text-color-primary font-weight-bold lh-small">
+                    Cari dealer terdekatmu &gt;
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pb0 pt0" data-name="Title">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16 text-center">
+                                    <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Pilih Motor Favorit Anda
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- <div class="container products_pager w-50">
+                        <t t-call="website_sale.search">
+                            <t t-set="_classes">w-100 w-md-auto mt-2</t>
+                        </t>
+                    </div> -->
+                    <section>
+                        <div class="container">
+                            <div t-if="enable_left_column" id="products_grid_before" class=""/>
+                            <div class="products_pager form-inline flex-md-nowrap justify-content-between justify-content-md-end">
+                                <!-- <div class="btn btn-primary">Button</div> -->
+                                <!-- <t t-call="website_sale.search">
+                                    <t t-set="_classes">w-100 w-md-auto mt-2</t>
+                                </t>
+                                <t t-call="website_sale.pricelist_list">
+                                    <t t-set="_classes">mt-2 ml-md-2</t>
+                                </t> -->
+                                <!-- <t t-call="website.pager">
+                                    <t t-set="_classes">mt-2 ml-md-2</t>
+                                </t> -->
+                            </div>
+                            <div class="row o_wsale_products_main_row">
+                                <div id="products_grid" t-attf-class="col #{'o_wsale_layout_list' if layout_mode == 'list' else ''}">
+                                    <t t-if="category">
+                                        <t t-set="editor_msg">Drag building blocks here to customize the header for "
+                                            <t t-esc="category.name"/>
+" category.</t>
+                                        <div class="mb16" id="category_header" t-att-data-editor-message="editor_msg" t-field="category.website_description"/>
+                                    </t>
+                                    <div t-if="bins" class="o_wsale_products_grid_table_wrapper">
+                                        <table class="table table-borderless" t-att-data-ppg="ppg" t-att-data-ppr="ppr">
+                                            <colgroup t-ignore="true">
+                                                <!-- Force the number of columns (useful when only one row of (x < ppr) products) -->
+                                                <col t-foreach="ppr" t-as="p"/>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr t-foreach="bins" t-as="tr_product">
+                                                    <t t-foreach="tr_product" t-as="td_product">
+                                                        <t t-if="td_product">
+                                                            <t t-set="product" t-value="td_product['product']"/>
+                                                            <td t-att-colspan="td_product['x'] != 1 and td_product['x']" t-att-rowspan="td_product['y'] != 1 and td_product['y']" t-attf-class="oe_product #{td_product['class']}">
+                                                                <div t-attf-class="o_wsale_product_grid_wrapper o_wsale_product_grid_wrapper_#{td_product['x']}_#{td_product['y']}">
+                                                                    <t t-call="website_sale.products_item">
+                                                                        <t t-set="product_image_big" t-value="td_product['x'] + td_product['y'] &gt; 2"/>
+                                                                    </t>
+                                                                </div>
+                                                            </td>
+                                                        </t>
+                                                        <td t-else=""/>
+                                                    </t>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <t t-else="">
+                                        <div class="text-center text-muted">
+                                            <t t-if="not search">
+                                                <h3 class="mt8">Produk kosong</h3>
+                                                <p t-if="category">Tidak ada produk pada kategori "
+                                                    <strong t-esc="category.display_name"/>
+".
+                                                </p>
+                                            </t>
+                                            <t t-else="">
+                                                <h3 class="mt8">No results</h3>
+                                                <p>No results for "
+                                                    <strong t-esc="search"/>
+"
+                                                    <t t-if="category"> in category "
+                                                        <strong t-esc="category.display_name"/>
+"
+                                                    </t>.
+                                                </p>
+                                            </t>
+                                            <p t-ignore="true" groups="sales_team.group_sale_manager">Click 
+                                                <i>'New'</i> in the top-right corner to create your first product.
+                                            </p>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="products_pager form-inline justify-content-center mt-3">
+                                <t t-call="website.pager" />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="oe_structure mb32" id="oe_structure_website_sale_products_2"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='products_grid_before']" position="before">
+            <t t-set="enable_left_column" t-value="True"/>
+        </xpath>
+        <xpath expr="//div[@id='products_grid_before']" position="inside">
+            <button type="button" class="btn btn-link d-lg-none" data-target="#wsale_products_categories_collapse" data-toggle="collapse">
+                Show categories
+            </button>
+            <div class="collapse d-lg-block" id="wsale_products_categories_collapse">
+                <ul class="nav nav-pills flex-row mb-2">
+                    <li class="nav-item">
+                        <a t-att-href="keep('/shop', category=0)" t-attf-class="nav-link #{'' if category else 'active'} o_not_editable">All Products</a>
+                    </li>
+                    <t t-foreach="categories" t-as="c">
+                        <t t-call="website_sale.categories_recursive"/>
+                    </t>
+                </ul>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='products_pager form-inline flex-md-nowrap justify-content-between justify-content-md-end']" position="inside">
+            <t t-set="list_price_desc_label">Catalog price: High to Low</t>
+            <t t-set="list_price_asc_label">Catalog price: Low to High</t>
+            <t t-set="name_asc_label">Name: A to Z</t>
+            <t t-set="name_desc_label">Name: Z to A</t>
+            <t t-set="website_sale_sortable" t-value="[                 (list_price_desc_label, 'list_price desc'),                 (list_price_asc_label, 'list_price asc'),                 (name_asc_label, 'name asc'),                 (name_desc_label, 'name desc')             ]"/>
+            <t t-set="website_sale_sortable_current" t-value="[sort for sort in website_sale_sortable if sort[1]==request.params.get('order', '')]"/>
+            <div class="dropdown mt-2 ml-md-2 dropdown_sorty_by">
+                <a role="button" href="#" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown">
+                    <span class="d-none d-lg-inline">
+                        <t t-if="len(website_sale_sortable_current)">
+                            Sorting by : 
+                            <t t-raw="website_sale_sortable_current[0][0]"/>
+                        </t>
+                        <t t-else="1">
+                            Sort by
+                        </t>
+                    </span>
+                    <i class="fa fa-sort-amount-asc d-lg-none"/>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                    <t t-foreach="website_sale_sortable" t-as="sortby">
+                        <a role="menuitem" rel="noindex,nofollow" t-att-href="keep('/shop', order=sortby[1])" class="dropdown-item">
+                            <span t-raw="sortby[0]" class="text-white"/>
+                        </a>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="nearest_dealer" name="Dealer Terdekat">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div class="oe_structure">
+        <body onload="findMyState()">
+          <div class="live-chat-riri">
+            <a href="/live-chat/">
+              <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+            </a>
+          </div>
+          <!-- <section id="myCarousel1665046911785" class="carousel slide min-height-unset" data-interval="5000" data-name="Carousel">
+            <div class="carousel-inner min-height-unset">
+              <div class="carousel-item active min-height-unset">
+                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_1.jpg" alt="First slide"/>
+              </div>
+              <div class="carousel-item min-height-unset">
+                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_2.jpg" alt="Second slide"/>
+              </div>
+              <div class="carousel-item min-height-unset">
+                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_3.jpg" alt="Third slide"/>
+              </div>
+              <div class="carousel-item min-height-unset">
+                <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_4.jpg" alt="Fourth slide"/>
+              </div>
+            </div>
+            <div class="bottom-right">
+              <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                <span class="sr-only o_default_snippet_text">Previous</span>
+              </div>
+              <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+                <span class="sr-only">Next</span>
+              </div>
+            </div>
+          </section> -->
+          <section id="myCarousel1665046911785" class="carousel slide min-height-unset" data-interval="5000" data-name="Carousel">
+            <div class="carousel-inner min-height-unset">
+              <div class="carousel-item min-height-unset active">
+                <img t-att-src="'data:image/png;base64,%s' % to_text(slider_first.banner_slider)" class="img-fluid w-100" alt="Image Slider"/>
+              </div>
+              <t t-foreach="slider_rec" t-as="slider">
+                <div class="carousel-item min-height-unset">
+                  <img t-att-src="'data:image/png;base64,%s' % to_text(slider.banner_slider)" class="img-fluid w-100" alt="Image Slider"/>
+                </div>
+              </t>
+            </div>
+            <div class="bottom-right">
+              <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                <span class="sr-only o_default_snippet_text">Previous</span>
+              </div>
+              <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+                <span class="sr-only">Next</span>
+              </div>
+            </div>
+          </section>
+          <!-- <section>
+            <div class="w-100">
+              <t t-foreach="slider_rec" t-as="slider">
+                <img t-att-src="'data:image/png;base64,%s' % to_text(slider.banner_slider)"/>
+              </t>
+            </div>
+          </section> -->
+          <section class="bg-color-secondary pt24 pb24" data-name="Features">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="row h-100">
+                    <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                      <img class="img-fluid" src="/dym_website/static/src/img/dealer-terdekat.svg" />
+                    </div>
+                    <div class="col-12 col-md-9 text-center-responsive">
+                      <div>
+                        <h4 class="font-weight-bold">
+                    Dealer Terdekat
+                        </h4>
+                      </div>
+                      <div>
+                        <a href="/dealer-terdekat" class="text-decoration-none">
+                          <p class="text-color-primary font-weight-bold lh-small">
+                      Cari dealer terdekatmu &gt;
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row h-100">
+                    <div class="col-12 col-md-3 text-center-responsive text-right mb-2">
+                      <img class="img-fluid" src="/dym_website/static/src/img/price-list.svg" />
+                    </div>
+                    <div class="col-12 col-md-9 text-center-responsive mt-auto">
+                      <div>
+                        <h4 class="font-weight-bold">
+                    Unit Pricelist
+                        </h4>
+                      </div>
+                      <div>
+                        <a href="/pricelist" class="text-decoration-none">
+                          <p class="text-color-primary font-weight-bold lh-small">
+                    Cari dealer terdekatmu &gt;
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="container pt24 pb24">
+            <button class="btn btn-primary m-auto">
+              <span id="status" class="pr-4"></span>
+              <i class="fa fa-paper-plane" />
+            </button>
+            <div class="d-none">
+            Latitude:
+              <span id="user-lat"></span>
+            </div>
+            <div class="d-none">
+            Longitude:
+              <span id="user-long"></span>
+            </div>
+            <div class="row pt24 m-auto">
+              <div class="col-lg-3 card bg-color-secondary br10">
+                <div class="card-body bg-color-secondary">
+                  <div class="text-right">
+                    <a href="/dealer-terdekat/maps/">
+                      <i class="fa fa-lg fa-paper-plane text-color-primary" />
+                    </a>
+                  </div>
+                  <h6 class="card-title text-muted font-weight-bold">
+                  Daya Motor Soekarno Hatta
+                  </h6>
+                  <h6 class="card-subtitle text-muted pb4">
+                  Jl. Soekarno Hatta 518 Batununggal, Kota Bandung, Jawa Barat
+                  </h6>
+                  <i class="fa fa-lg fa-phone-square text-color-primary pr-2" />
+                  <small>
+                    <span class="font-weight-bold text-muted">085974596264</span>
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="pt24 text-center">
+              <a class="btn btn-primary" href="/dealers/">Semua Dealer &amp;gt;</a>
+            </div>
+          </section>
+          <script src="/dym_website/static/src/js/geolocation.js"></script>
+        </body>
+      </div>
+    </t>
+  </template>
+</odoo>

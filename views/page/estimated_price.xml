@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="estimated_price" name="Estimasi Biaya Service">
+        <!-- Add an element after the top menu  -->
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="live-chat-riri">
+                    <a href="/live-chat/">
+                      <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+                    </a>
+                  </div>
+                <section class="s_text_image pt0 pb0" data-name="Image - Text">
+                    <div>
+                        <t t-foreach="estimated_page_rec" t-as="image">
+                            <img t-att-src="'data:image/png;base64,%s' % to_text(image.banner_estimated)" class="container-max-width" alt="Image Banner Service"/>
+                        </t>
+                        <!-- <img src="/dym_website/static/src/img/banner-service.png" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="" aria-describedby="tooltip730266"/> -->
+                    </div>
+                </section>
+                <section class="pb0 pt0" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb16">
+                                <t t-foreach="estimated_page_rec" t-as="header">
+                                    <h2 class="s_title_default color-black font-weight-bold">
+                                    <span t-field="header.header_estimated"/>
+                                    </h2>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pt0 pb0" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt0 pb0">
+                                <p class="s_title_default text-justify text-black">
+                                    <t t-foreach="estimated_page_rec" t-as="text">
+                                        <span t-field="text.text_estimated"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container">
+                        <table class="table table-striped table-responsive-lg">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <!-- <th scope="col">#</th> -->
+                                    <th scope="col">Jenis Motor</th>
+                                    <th scope="col">Jasa Service Lengkap</th>
+                                    <th scope="col">Promo Jasa Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="pricelist_rec" t-as="pricelist">
+                                    <tr>
+                                        <!-- <th scope="row"><span t-field="pricelist.id"></span></th> -->
+                                        <td><span t-field="pricelist.unit_name"></span></td>
+                                        <td><span t-field="pricelist.service_price"></span></td>
+                                        <td><span t-if="pricelist.promo_service_price == 0"></span><span t-else=""><span t-field="pricelist.promo_service_price"></span></span></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                </section>
+                <section class="pt0 pb0" data-name="Title">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt24 pb0">
+                                <p>
+                                    <t t-foreach="estimated_page_rec" t-as="content">
+                                        <span t-field="content.content_estimated"/>
+                                    </t>
+                                </p>
+                                <!-- <h4 class="font-weight-bold">Paket Servis Lengkap</h4>
+                                <ol>
+                                    <li>Pembersihan karburator</li>
+                                    <li>Penyetelan karburator</li>
+                                    <li>Pembersihan saringan udara</li>
+                                    <li>Pemeriksaan dan penggantian oli</li>
+                                    <li>Pembersihan busi</li>
+                                    <li>Penyetelan dan pelumasan rantai roda</li>
+                                    <li>Penyetelan rem depan dan belakang</li>
+                                    <li>Pemeriksaan dan penambahan air aki</li>
+                                    <li>Pemeriksaan lampu dan klakson</li>
+                                    <li>Penyetelan dan pelumasan kabel gas</li>
+                                    <li>Pemeriksaan dan penyetelan stang kemudi</li>
+                                    <li>Pengencangan mur dan baut</li>
+                                    <li>Pemeriksaan roda dan ban</li>
+                                    <li>Penyetelan klep</li>
+                                    <li>Penyetelan kopling</li>
+                                </ol>
+                                <h4 class="font-weight-bold">Paket Servis Ringan</h4>
+                                <ol>
+                                    <li>Pembersihan karburator</li>
+                                    <li>Penyetelan karburator</li>
+                                    <li>Pembersihan saringan udara</li>
+                                    <li>Pemeriksaan dan penggantian oli</li>
+                                    <li>Pembersihan busi</li>
+                                    <li>Penyetelan dan pelumasan rantai roda</li>
+                                    <li>Penyetelan rem depan dan belakang</li>
+                                    <li>Pemeriksaan dan penambahan air aki</li>
+                                    <li>Pemeriksaan lampu dan klakson</li>
+                                </ol>
+                                <p class="s_title_default text-justify color-black">
+                            Paket servis ringan hanya mencover 9 poin diatas, Poin 10 sampai dengan poin 15 hanya anda dapatkan pada paket servis lengkap.
+                                </p>
+                                <h4 class="font-weight-bold">Servis Berat</h4>
+                                <p class="s_title_default text-justify text-black">
+                            Pengerjaan servis berat mencakup penggantian spare part di dalam ruang bakar (Piston set) dan komponen-komponen di dalam ruang transmisi. Pada overhaul proses pengerjaan dilakukan proses turun mesin. <br></br>
+                                    <br></br> Harga servis berat bervariasi dari tingkat kerusakan hingga waktu servis yang diperlukan.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

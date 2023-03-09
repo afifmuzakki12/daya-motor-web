@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="survey_unit_order_template" name="Unit Order Form">
+    <t t-call="website.layout">
+      <t t-if="submitted">
+      </t>
+      <t t-else="">
+        <section class="s_text_image pt0 pb0 bg-100" data-name="Image - Text">
+          <div>
+            <img src="/dym_website/static/src/img/banner-vario.png" class="container-max-width" alt="Odoo • Image and Text" data-original-title="" title="" aria-describedby="tooltip730266" />
+          </div>
+        </section>
+        <section class="s_text_block bg-color-primary pb8 pt16" data-name="Text block">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3" id="connect">
+                <a t-attf-href="/web/binary/saveas?model=product.template&amp;field=brochure_file&amp;filename_field=Brochure File Upload" class="text-decoration-none text-center text-white">
+                  <p>DOWNLOAD BROCHURE</p>
+                </a>
+              </div>
+              <div class="col-lg-3" id="connect">
+                <a href="/unit-order/" class="text-decoration-none text-center text-white">
+                  <p>LAKUKAN PEMESANAN</p>
+                </a>
+              </div>
+              <div class="col-lg-3" id="connect">
+                <a href="/test-ride/" class="text-decoration-none text-center text-white">
+                  <p>TEST RIDE</p>
+                </a>
+              </div>
+              <div class="col-lg-3" id="connect">
+                <a href="#" class="text-decoration-none text-center text-white">
+                  <p>CALCULATOR CICILAN</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb0 pt0" data-name="Title">
+          <div class="container">
+            <div class="row s_nb_column_fixed">
+              <div class="col-lg-12 s_title pt16 pb0 text-center">
+                <h1 class="s_title_default text-color-primary font-weight-bold">
+                  Pemesanan Unit
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <form id="form_submit_form" action="/unit-order" method="POST" onsubmit="return false, popupFunction()">
+          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+          <div class="container">
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="product_category">Kategori Produk</label>
+                <input type="text" class="form-control" name="product_category" value="Matic" required="required" readonly="readonly"/>
+              </div>
+              <div class="form-group col-md-6 mb-3">
+                <label for="product_name">Nama Produk</label>
+                <input type="text" class="form-control" name="product_name" value="Vario 160" required="required" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="product_varian">Pilih Varian Produk</label>
+                <select class="form-control" name="product_varian" required="true">
+                  <option value="Honda Vario 160 CBS">Honda Vario 160 CBS</option>
+                  <option value="Honda Vario 160 ABS">Honda Vario 160 ABS</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="otr_price">Harga OTR</label>
+                <input type="text" class="form-control" name="otr_price" value="Rp 27.800.000,-" required="true" readonly="readonly"/>
+              </div>
+            </div>
+            <p class="text-center text-black font-weight-bold pt24">
+              Simulasi Cicilan
+            </p>
+            <div class="form-row">
+              <div class="form-group col-md-4 mb-3">
+                <label for="down_payment">Pilih DP *Down Payment</label>
+                <select class="form-control" name="down_payment" required="true">
+                  <option value="">Choose...</option>
+                  <option value="Rp 1 Juta - Rp 2,5 Juta">Rp 1 Juta - Rp 2,5 Juta</option>
+                  <option value="Rp 2,6 Juta - 3,5 Juta"> Rp 2,6 Juta - 3,5 Juta</option>
+                  <option value="Rp 3,6 Juta - Rp 5 Juta">Rp 3,6 Juta - Rp 5 Juta</option>
+                  <option value="Diatas Rp 5 Juta">Diatas Rp 5 Juta</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2 mb-3">
+                <label for="tenor">Jangka Waktu</label>
+                <select class="form-control" name="tenor" required="true">
+                  <option value="">Choose...</option>
+                  <option value="12 Bulan">12 Bulan</option>
+                  <option value="24 Bulan">24 Bulan</option>
+                  <option value="36 Bulan">36 Bulan</option>
+                  <option value="48 Bulan">48 Bulan</option>
+                  <option value="60 Bulan">60 Bulan</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6 mb-3">
+                <label for="angsuran_per_bulan">Total angsuran per bulan</label>
+                <input type="text" class="form-control" name="angsuran_per_bulan" value="Rp ..." required="true" readonly="readonly"/>
+                <p>
+                  *Simulasi diatas hanya untuk gambaran jumlah angsuran, hubungi
+                  team marketing kami untuk mendapatkan harga fix.
+                </p>
+              </div>
+            </div>
+            <p class="text-center text-black font-weight-bold">
+              Identitas Diri
+            </p>
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="name">Nama:</label>
+                <input type="text" class="form-control" name="name" placeholder="Input your full name" required="true"/>
+              </div>
+              <div class="form-group col-md-6 mb-3">
+                <label for="email">Alamat Email:</label>
+                <input type="email" class="form-control" name="email" placeholder="name@example.com" required="true"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="telphone">No Telephone:</label>
+                <input type="tel" class="form-control" name="telphone" placeholder="08xxxxxxxx" required="true" minlength="10" maxlength="13"/>
+              </div>
+              <div class="form-group col-md-6 mb-3">
+                <label for="gender">Gender:</label>
+                <select class="form-control" name="gender" required="true">
+                  <option value="">Choose...</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="kota">Kota</label>
+                <select class="form-control" name="kota" required="true">
+                  <option value="">Choose...</option>
+                  <option value="Bandung">Bandung</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3 mb-3">
+                <label for="kecamatan">Kecamatan</label>
+                <select class="form-control" name="kecamatan" required="true">
+                  <option value="">Choose...</option>
+                  <option value="Cidadap">Cidadap</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3 mb-3">
+                <label for="kelurahan">Kelurahan</label>
+                <select class="form-control" name="kelurahan" required="true">
+                  <option value="">Choose...</option>
+                  <option value="Hegarmanah">Hegarmanah</option>
+                </select>
+              </div>
+            </div>
+            <p class="text-black">Bersedia dihubungi oleh sales people via ?</p>
+            <div class="checkbox-group-required">
+              <input type="checkbox" />
+              <label class="form-check-label" for="inlineCheckbox1">Whatsapp</label>
+              <input type="checkbox" />
+              <label class="form-check-label" for="inlineCheckbox2">Telp</label>
+            </div>
+            <p>*bisa pilih keduanya</p>
+            <div class="form-group text-center">
+              <button class="btn btn-tertiary font-weight-bold" type="submit">
+                <span class="fa fa-shopping-bag pr-2"></span>PESAN
+              </button>
+              <!-- The Modal -->
+              <div id="myModal" class="modal-popup">
+                <span class="close-popup">&#215;</span>
+                <img class="modal-content-popup" src="/dym_website/static/src/img/riri_thanks-unit.png" />
+              </div>
+              <script src="/dym_website/static/src/js/popup.js"></script>
+            </div>
+          </div>
+        </form>
+      </t>
+    </t>
+  </template>
+</odoo>

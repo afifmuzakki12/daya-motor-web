@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="sale_right_cart" inherit_id="website_sale.short_cart_summary" customize_show="True" name="Sale Right Cart Custom">
+        <xpath expr="//div[@class='card js_cart_summary']" position="replace">
+            <div class="card js_cart_summary" t-if="website_sale_order and website_sale_order.website_order_line">
+                <div class="card-body">
+                    <h4 class="d-none d-xl-block">Total Pesanan</h4>
+                    <hr class="d-none d-xl-block"/>
+                    <div>
+                        <t t-call="website_sale.total">
+                            <t t-set="no_rowspan">1</t>
+                        </t>
+                        <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-secondary float-right d-none d-xl-inline-block" href="/shop/checkout?express=1">
+                            <span>Pesan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

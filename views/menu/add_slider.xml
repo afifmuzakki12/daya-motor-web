@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <!-- tree add slider -->
+        <record id="view_add_slider_tree" model="ir.ui.view">
+            <field name="name">add.slider.tree</field>
+            <field name="model">add.slider</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Slider">
+                    <label for="banner_slider" string="Banner Slider"></label>
+                    <field name="banner_slider"></field>
+                    <!-- <label for="slider_1" string="Slider 1"></label>
+                    <field name="slider_1"/>
+                    <field name="slider_2"/>
+                    <field name="slider_3"/>
+                    <field name="slider_4"/>
+                    <field name="slider_5"/>
+                    <field name="slider_6"/>
+                    <field name="slider_7"/>
+                    <field name="slider_8"/>
+                    <field name="slider_9"/>
+                    <field name="slider_10"/> -->
+                </form>
+            </field>
+        </record>
+        <record id="view_add_slider_tree" model="ir.ui.view">
+            <field name="name">add.slider.tree</field>
+            <field name="model">add.slider</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Slider">
+                    <field name="banner_slider"/>
+                    <!-- <h4>Banner Slider</h4>
+                    <div class="row">
+                        <div class="col d-flex flex-column">
+                            <label for="banner_slider" string="Upload Slider:"/>
+                            <field name="banner_slider" widget="image" class="oe_avatar" options="{'preview_image': 'banner_slider'}"/>
+                        </div> -->
+                        <!-- <div class="col d-flex flex-column">
+                            <label for="slider_2" string="Upload Slider:"/>
+                            <field name="slider_2" widget="image" class="oe_avatar" options="{'preview_image': 'slider_2'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_3" string="Upload Slider:"/>
+                            <field name="slider_3" widget="image" class="oe_avatar" options="{'preview_image': 'slider_3'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_4" string="Upload Slider:"/>
+                            <field name="slider_4" widget="image" class="oe_avatar" options="{'preview_image': 'slider_4'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_5" string="Upload Slider:"/>
+                            <field name="slider_5" widget="image" class="oe_avatar" options="{'preview_image': 'slider_5'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_6" string="Upload Slider:"/>
+                            <field name="slider_6" widget="image" class="oe_avatar" options="{'preview_image': 'slider_6'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_7" string="Upload Slider:"/>
+                            <field name="slider_7" widget="image" class="oe_avatar" options="{'preview_image': 'slider_7'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_8" string="Upload Slider:"/>
+                            <field name="slider_8" widget="image" class="oe_avatar" options="{'preview_image': 'slider_8'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_9" string="Upload Slider:"/>
+                            <field name="slider_9" widget="image" class="oe_avatar" options="{'preview_image': 'slider_9'}"/>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <label for="slider_10" string="Upload Slider:"/>
+                            <field name="slider_10" widget="image" class="oe_avatar" options="{'preview_image': 'slider_10'}"/>
+                        </div> -->
+                    <!-- </div> -->
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

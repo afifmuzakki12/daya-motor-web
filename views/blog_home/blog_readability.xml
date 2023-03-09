@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="blog_readability" name="Increase Readability" inherit_id="dym_website.blog_home" active="True" customize_show="True">
+    </template>
+</odoo>
+
+

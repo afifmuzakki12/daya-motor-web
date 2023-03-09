@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!-- tree view test ride -->
+        <record id="view_form_testride_tree" model="ir.ui.view">
+            <field name="name">form.testride.tree</field>
+            <field name="model">test.ride.form</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Test Ride Order">
+                    <field name="time_stamp"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="alamat"/>
+                    <field name="provinsi"/>
+                    <field name="kota"/>
+                    <field name="motor_dimiliki"/>
+                    <field name="varian_motor"/>
+                    <field name="tahun_pembuatan"/>
+                    <field name="kategori_unit"/>
+                    <field name="varian_unit"/>
+                    <field name="rencana_pembelian"/>
+                    <field name="provinsi_dealer"/>
+                    <field name="kota_dealer"/>
+                    <field name="nama_dealer"/>
+                    <field name="tulis_pesan"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

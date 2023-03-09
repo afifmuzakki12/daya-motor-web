@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="profile_layout" inherit_id="portal.portal_layout" customize_show="True" name="Layout Custom">
+        <xpath expr="//div[@class='o_portal container mt-3']" position="before">
+            <div class="bg-color-primary">
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <span t-if="image1920 == true">
+                            <img t-attf-src="data:image/jpg;base64,{{ image1920 }}" class="rounded-circle p-3" style="width: 150px;"/>
+                        </span>
+                        <span t-else="">
+                            <img src="/dym_website/static/src/img/default-profile.jpg" class="rounded-circle p-3" style="width: 150px;"/>
+                        </span>
+                    </div>
+                    <div class="p-3 d-flex align-self-center flex-column">
+                        <h2 class="text-white">Your Name</h2>
+                        <p class="text-white">
+                            <svg width="20" height="30" viewBox="0 0 26 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.9968 13.1313C25.9988 11.0312 25.4683 8.96463 24.4545 7.12361C23.4408 5.28259 21.9768 3.72685 20.1984 2.60091C18.4201 1.47496 16.3851 0.815349 14.2826 0.683337C12.18 0.551324 10.0781 0.951199 8.1721 1.84581C6.26608 2.74043 4.6178 4.10076 3.38038 5.80043C2.14295 7.5001 1.35652 9.48398 1.09415 11.5678C0.831776 13.6516 1.10197 15.7676 1.87963 17.7195C2.65729 19.6713 3.91718 21.3955 5.54228 22.732V33.522C5.54112 33.7154 5.59024 33.9057 5.68484 34.0744C5.77943 34.2432 5.91629 34.3846 6.08205 34.4849C6.24648 34.588 6.43466 34.6473 6.62862 34.6572C6.82259 34.6671 7.01586 34.6273 7.19 34.5416L13.4968 31.3839L19.8036 34.5416C19.9649 34.6126 20.1387 34.6511 20.315 34.6549C20.6164 34.6549 20.9054 34.5355 21.1185 34.3231C21.3316 34.1106 21.4514 33.8225 21.4514 33.522V22.732C22.873 21.5654 24.0178 20.0995 24.8037 18.4396C25.5896 16.7797 25.9971 14.9669 25.9968 13.1313ZM3.26955 13.1313C3.26955 11.1149 3.86937 9.14371 4.99316 7.46709C6.11694 5.79047 7.71422 4.48371 9.58301 3.71205C11.4518 2.94038 13.5082 2.73848 15.4921 3.13187C17.476 3.52526 19.2983 4.49628 20.7286 5.92212C22.1589 7.34797 23.133 9.16461 23.5276 11.1423C23.9222 13.12 23.7197 15.17 22.9456 17.0329C22.1715 18.8959 20.8607 20.4882 19.1788 21.6085C17.4969 22.7287 15.5196 23.3267 13.4968 23.3267C10.7855 23.3229 8.18637 22.2476 6.2692 20.3364C4.35203 18.4252 3.27331 15.8342 3.26955 13.1313ZM19.1786 31.6954L14.0082 29.1041C13.8487 29.0275 13.6739 28.9878 13.4968 28.9878C13.3198 28.9878 13.145 29.0275 12.9855 29.1041L7.815 31.6954V24.2329C9.57475 25.1269 11.5218 25.5929 13.4968 25.5929C15.4719 25.5929 17.4189 25.1269 19.1786 24.2329V31.6954ZM13.4968 21.0611C15.0701 21.0611 16.608 20.596 17.9161 19.7247C19.2242 18.8533 20.2438 17.6149 20.8459 16.1659C21.4479 14.7169 21.6054 13.1225 21.2985 11.5843C20.9916 10.0461 20.234 8.63316 19.1215 7.52417C18.0091 6.41518 16.5917 5.65994 15.0487 5.35397C13.5056 5.048 11.9063 5.20504 10.4527 5.80522C8.99925 6.4054 7.75692 7.42178 6.88286 8.72581C6.0088 10.0298 5.54228 11.563 5.54228 13.1313C5.54228 15.2344 6.38034 17.2514 7.87211 18.7385C9.36388 20.2256 11.3871 21.0611 13.4968 21.0611ZM13.4968 7.46724C14.6206 7.46724 15.7191 7.79943 16.6535 8.42181C17.5878 9.04419 18.3161 9.9288 18.7461 10.9638C19.1762 11.9988 19.2887 13.1376 19.0695 14.2363C18.8502 15.3351 18.3091 16.3443 17.5145 17.1364C16.7199 17.9286 15.7075 18.468 14.6053 18.6866C13.5031 18.9051 12.3607 18.793 11.3225 18.3643C10.2843 17.9356 9.39689 17.2096 8.77256 16.2781C8.14824 15.3467 7.815 14.2516 7.815 13.1313C7.81875 11.6303 8.41858 10.1918 9.48331 9.13034C10.548 8.06893 11.9911 7.47098 13.4968 7.46724Z" fill="#FFC700"/>
+                            </svg> Non Member
+                        </p>
+                        <p class="text-white font-weight-bold"><span class="fa fa-money fa-lg"></span> - Points</p>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-warning alert-dismissable text-center" role="status">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" data-oe-model="ir.ui.view" data-oe-id="883" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/button[1]">×</button>
+                <span>
+                   <h6 id="quote_3"><strong>Message! </strong>Silahkan memperbaharui data Profil Anda untuk menampilkan Motor yang Anda Miliki!</h6>
+                </span>
+             </div>
+        </xpath>
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="o_portal_wrap">
+                <div class="container mb64">
+                    <t t-if="my_details">
+                        <div>
+                            <div>
+                                <t t-raw="0"/>
+                            </div>
+                            <div id="o_my_sidebar" class="o_my_sidebar border border-dark br20 m-3 p-4">
+                                <div class="o_my_contact" t-if="sales_user">
+                                    <t t-call="portal.portal_contact"/>
+                                </div>
+                                <div class="o_portal_my_details">
+                                    <h4 class="text-color-primary font-weight-bold">Profil <a role="button" href="/my/account" class="btn btn-sm btn-link"><i class="fa fa-pencil"/> Edit</a></h4>
+                                    <hr class="mt-1 mb-0"/>
+                                    <div t-field="user_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;no_ktp&quot;, &quot;email&quot;, &quot;phone&quot;, &quot;address&quot;, &quot;name&quot;,]}"/>
+                                </div>
+                                <div class="o_my_archives" t-if="archive_groups">
+                                    <t t-call="portal.portal_archive_groups"/>
+                                </div>
+                            </div>
+                            <div class="o_my_sidebar border border-dark br20 m-3 p-4">
+                                <!-- <img t-attf-src="data:image/jpg;base64,{{ res_partner.image_1024 }}" class="container-max-width"/> -->
+                                <!-- <h4 class="text-color-primary font-weight-bold">Motor Yang Anda Miliki</h4> -->
+                                <h4 class="text-color-primary font-weight-bold">Motor Yang Anda Miliki <a role="button" href="/my/account" class="btn btn-sm btn-link"><i class="fa fa-pencil"/> Edit</a></h4>
+                                <hr class="mt-1 mb-2"/>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="card p-3 br20" style="background-color: #06476a">
+						<div class="container font-weight-bold">
+                                                <table class="table table-borderless table-responsive">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="text-white">Jenis Motor</td>
+                                                        <td class="text-white">:</td>
+                                                        <td class="text-white">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-white">Varian Motor</td>
+                                                        <td class="text-white">:</td>
+                                                        <td class="text-white">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-white">Tahun Pembuatan</td>
+                                                        <td class="text-white">:</td>
+                                                        <td class="text-white">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-white">No Rangka</td>
+                                                        <td class="text-white">:</td>
+                                                        <td class="text-white">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-white">Plat Nomor</td>
+                                                        <td class="text-white">:</td>
+                                                        <td class="text-white">-</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <t t-raw="0"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

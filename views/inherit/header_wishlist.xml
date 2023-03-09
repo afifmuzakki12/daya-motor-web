@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+  <template id="header_wishlist_custom" inherit_id="website_sale_wishlist.header" name="Custom Header Shop Wishlist Link">
+    <xpath expr="//a[contains(@href, '/shop/wishlist')]" position="replace">
+      <a href="/shop/wishlist" class="nav-link">
+        <i class="fa fa-lg fa-heart text-white"/>
+        <sup t-attf-class="my_wish_quantity o_animate_blink badge badge-primary">
+          <t t-esc="wishcount"/>
+        </sup>
+      </a>
+    </xpath>
+  </template>
+</odoo>

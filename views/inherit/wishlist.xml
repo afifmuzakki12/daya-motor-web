@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<odoo>
+  <template id="wishlist_custom" inherit_id="website_sale_wishlist.product_wishlist" customize_show="True" name="Wishlist Page">
+    <xpath expr="//div[@id='wrap']" position="replace">
+      <div id="wrap" class="js_sale">
+        <div class="oe_structure" id="oe_structure_website_sale_wishlist_product_wishlist_1"/>
+        <div class="container oe_website_sale">
+          <section class="container wishlist-section pt24">
+            <h1 class="s_title_default text-color-primary font-weight-bold text-center">
+                  My Wishlist
+            </h1>
+            <div class="s_hr text-left pt4 pb4" data-name="Separator">
+              <hr class="border-color-primary s_hr_4px s_hr_solid mx-auto w-25" />
+            </div>
+            <div class="checkbox">
+              <label class="text-muted">
+                <input type="checkbox" id="b2b_wish" value="1" class="mr8"/>
+Add product to my cart but keep it in my wishlist
+              </label>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-hover text-center" id="o_comparelist_table">
+                <body>
+                  <t t-foreach="wishes" t-as="wish">
+                    <tr t-att-data-wish-id="wish.id" t-att-data-product-id="wish.product_id.id">
+                      <td class="td-img bg-white">
+                        <a t-att-href="wish.product_id.website_url">
+                          <img t-attf-src="/web/image/product.product/#{wish.product_id.id}/image_128" class="img img-fluid w-auto" style="margin:auto;" alt="Product image"/>
+                        </a>
+                      </td>
+                      <td class="text-left bg-white">
+                        <strong>
+                          <a t-att-href="wish.product_id.website_url" class="text-decoration-none">
+                            <t t-esc="wish.product_id.display_name"/>
+                          </a>
+                        </strong>
+                        <small class="d-none d-md-block">
+                          <p t-field="wish.product_id.description_sale" class="text-muted"/>
+                        </small>
+                        <button type="button" class="btn btn-link o_wish_rm no-decoration text-color-primary text-decoration-none">
+                          <small>
+                            <i class="fa fa-trash-o"/>
+Remove
+                          </small>
+                        </button>
+                      </td>
+                      <td class="bg-white align-middle">
+                        <t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
+                        <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+                      </td>
+                      <td class="text-center td-wish-btn bg-white align-middle">
+                        <input name="product_id" t-att-value="wish.product_id.id" type="hidden"/>
+                        <button type="button" role="button" class="btn btn-primary btn-block o_wish_add mb4">Add 
+                          <span class="d-none d-md-inline">to Cart</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </t>
+                </body>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </xpath>
+  </template>
+</odoo>
+

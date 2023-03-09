@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- form view booking service card -->
+        <record id="view_booking_service_card_tree" model="ir.ui.view">
+            <field name="name">booking.service.card.tree</field>
+            <field name="model">booking.service.card</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Booking Service Card">
+                    <field name="card_title"></field>
+                    <field name="card_text"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

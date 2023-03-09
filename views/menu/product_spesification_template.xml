@@ -1,0 +1,166 @@
+<odoo>
+    <data>
+        <record id="view_spesifikasi_form" model="ir.ui.view">
+            <field name="name">view_spesifikasi_form</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"></field>
+            <field name="arch" type="xml">
+                <field name="sale_ok" position="before">
+                    <notebook>
+                        <page name="mesin" string="Mesin">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="tipe_mesin" />
+                                        <field name="suplai_bahan_bakar" />
+                                        <field name="diameter_langkah" />
+                                        <field name="tipe_transmisi" />
+                                        <field name="perbandingan_kompresi" />
+                                        <field name="daya_maksimum" />
+                                        <field name="torsi_maksimum" />
+                                        <field name="tipe_starter" />
+                                        <field name="tipe_kopling" />
+                                        <field name="volume_langkah" />
+                                        <field name="pendingin_mesin" />
+                                        <field name="pola_perpindahan_gigi" />
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="rangka_kaki" string="Rangka dan Kaki">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="tipe_rangka" />
+                                        <field name="suspensi_depan" />
+                                        <field name="suspensi_belakang" />
+                                        <field name="ban_depan" />
+                                        <field name="ban_belakang" />
+                                        <field name="rem_depan" />
+                                        <field name="rem_belakang" />
+                                        <field name="sistem_pengereman" />
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="dimensi_berat" string="Dimensi dan Berat">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="dimensi_plt" />
+                                        <field name="tinggi_tempat_duduk" />
+                                        <field name="sumbu_roda" />
+                                        <field name="jarak_ke_tanah" />
+                                        <field name="berat_kosong" />
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="kapasitas" string="Kapasitas">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="kapasitas_tangki" />
+                                        <field name="kapasitas_pelumas" />
+                                        <field name="power_charger" />
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="kelistrikan" string="Kelistrikan">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="tipe_aki" />
+                                        <field name="sistem_pengapian" />
+                                        <field name="tipe_busi" />
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="banner_slider" string="Banner dan Slider">
+                            <h4>Banner Header</h4>
+                            <div class="row">
+                                <div class="col-md-auto d-flex flex-column">
+                                    <label for="banner_image" string="Upload Banner Image:"/>
+                                    <field name="banner_image" widget='image' class="oe_avatar" options="{'preview_image': 'banner_image'}"/>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h4>Banner Slider</h4>
+                            <div class="row">
+                                <div class="col d-flex flex-column">
+                                    <label for="banner_slider_first" string="Upload First Slider:"/>
+                                    <field name="banner_slider_first" widget="image" class="oe_avatar" options="{'preview_image': 'banner_slider_first'}"/>
+                                </div>
+                                <div class="col d-flex flex-column">
+                                    <label for="banner_slider_second" string="Upload Second Slider:"/>
+                                    <field name="banner_slider_second" widget="image" class="oe_avatar" options="{'preview_image': 'banner_slider_second'}"/>
+                                </div>
+                                <div class="col d-flex flex-column">
+                                    <label for="banner_slider_third" string="Upload Third Slider:"/>
+                                    <field name="banner_slider_third" widget="image" class="oe_avatar" options="{'preview_image': 'banner_slider_third'}"/>
+                                </div>
+                                <div class="col d-flex flex-column">
+                                    <label for="banner_slider_fourth" string="Upload Fourth Slider:"/>
+                                    <field name="banner_slider_fourth" widget="image" class="oe_avatar" options="{'preview_image': 'banner_slider_fourth'}"/>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h4>Image Spin 360</h4>
+                            <div class="row">
+                                <div class="col d-flex flex-column">
+                                    <label for="spin_360" string="Upload Spin 360:"/>
+                                    <field name="spin_360" widget="image" class="oe_avatar" options="{'preview_image': 'spin_360'}"/>
+                                </div>
+                            </div>
+                        </page>
+                        <page name="varian_warna" string="Varian Warna">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="varian_1" widget="binary"/>
+                                        <field name="varian_2" widget="binary"/>
+                                        <field name="varian_3" widget="binary"/>
+                                        <field name="varian_4" widget="binary"/>
+                                        <field name="varian_5" widget="binary"/>
+                                        <field name="varian_6" widget="binary"/>
+                                        <field name="varian_7" widget="binary"/>
+                                        <field name="varian_8" widget="binary"/>
+                                        <field name="varian_9" widget="binary"/>
+                                        <field name="varian_10" widget="binary"/>
+                                        <field name="varian_11" widget="binary"/>
+                                        <field name="varian_12" widget="binary"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                        <page name="brochure" string="Brochure">
+                            <form>
+                                <label for="brochure_file"></label>
+                                <field name="brochure_file" widget="pdf_viewer"/>
+                            </form>
+                        </page>
+                        <page name="material_desc" string="Material Description">
+                            <form>
+                                <sheet>
+                                    <group col="2">
+                                        <field name="material_description" string="Material Description"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+                    </notebook>
+                    <form>
+                        <field name="is_ready" string="Is Ready"/>
+                        <label for="is_ready" string="Is Ready "/>
+                    </form>
+                </field>
+                <field name="image_1920" position="after">
+                    <div class="row"></div>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="maps_page" name="Maps Page">
+    <!-- Add an element after the top menu  -->
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <div class="live-chat-riri">
+          <a href="/live-chat/">
+            <img href="/live-chat/" class="act-img" src="/dym_website/static/src/img/popup-riri.png" aria-describedby="tooltip941603" style="max-height: 100px; max-width: 250px" />
+          </a>
+        </div>
+        <section id="myCarousel1665046911785" class="carousel slide min-height-unset" data-interval="5000" data-name="Carousel">
+          <div class="carousel-inner min-height-unset">
+            <div class="carousel-item active min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_1.jpg" alt="First slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_2.jpg" alt="Second slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_3.jpg" alt="Third slide"/>
+            </div>
+            <div class="carousel-item min-height-unset">
+              <img class="img-fluid w-100" src="/dym_website/static/src/img/SLIDER-WEB-VARIO-125_4.jpg" alt="Fourth slide"/>
+            </div>
+          </div>
+          <div class="bottom-right">
+            <div class="carousel-control-prev-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </div>
+            <div class="carousel-control-next-icon" style="width:28px; height:28px;" data-target="#myCarousel1665046911785" data-slide="next" role="img" aria-label="Next" title="Next">
+              <span class="sr-only">Next</span>
+            </div>
+          </div>
+        </section>
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.5925890209962!2d107.62203354205454!3d-6.950179207667749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c4a70ddee7fd%3A0x8160374271468184!2sHonda%20Daya%20Motor%20Soekarno%20Hatta%20Bandung%20(Official)!5e0!3m2!1sid!2sid!4v1663658516274!5m2!1sid!2sid" width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <a onclick="history.back()">
+            <div class="btn-close-float">
+              <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#C12026" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>
